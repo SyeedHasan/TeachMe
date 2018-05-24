@@ -1,2 +1,5 @@
-# teacher-student-portal
-Teacher-Student Portal: More detail in the README.
+
+Teacher Student Portal
+
+Features: 
+[ ] Feature 1
