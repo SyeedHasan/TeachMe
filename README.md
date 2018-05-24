@@ -1,6 +1,5 @@
 
-Todos: (Vague because of improper requirement gathering)
-
+Todos:
 - [ ] Posts by someone
 - [ ] Reminders (email, push-notifications)
 - [ ] Search bar
