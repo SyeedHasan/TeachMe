@@ -2,4 +2,4 @@
 Teacher Student Portal
 
 Features: 
-[ ] Feature 1
+- [ ] Feature 1
