@@ -1,0 +1,329 @@
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf');
+}
+
+
+body {
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: Poppins-Regular, sans-serif;
+}
+
+a {
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+  transition: all 0.4s;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+a:hover {
+  text-decoration: none;
+  color: bisque;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus,
+input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+.txt1 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.txt2 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  color: #333333;
+  line-height: 1.5;
+}
+
+.mainDiv {
+  width: 100%;
+  margin: 0 auto;
+  /* Change to a simple color or just use an image. Depends on req. */
+  background: url('../images/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loginContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.loginWrapper {
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 40px 55px 33px 55px;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.loginForm-title {
+  display: block;
+  font-family: Poppins-Bold;
+  font-size: 30px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 26px;
+}
+
+.loginForm-title i {
+  font-size: 60px;
+}
+
+.inputWrapper {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin-bottom: 37px;
+}
+
+.inputElement {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  padding: 0 5px;
+}
+
+.focus-inputElement {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-inputElement::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: all 0.4s;
+  background: #775D50;
+}
+
+.focus-inputElement::after {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #999999;
+  line-height: 1.2;
+  content: attr(data-placeholder);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 16px;
+  left: 0px;
+  padding-left: 5px;
+  transition: all 0.4s;
+}
+
+.inputElement:focus+.focus-inputElement::after {
+  top: -15px;
+}
+
+.inputElement:focus+.focus-inputElement::before {
+  width: 100%;
+}
+
+.has-val.inputElement+.focus-inputElement::after {
+  top: -15px;
+}
+
+.has-val.inputElement+.focus-inputElement::before {
+  width: 100%;
+}
+
+.btn-show-pass {
+  font-size: 15px;
+  color: #999999;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding-right: 5px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+/* Use gradients or just these simple colors. See again. */
+.btn-show-pass:hover {
+  color: black;
+}
+
+.btn-show-pass.active {
+  color: black;
+
+}
+
+.cont-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 13px;
+}
+
+.loginButton {
+  background: transparent;
+  color: white;
+  border-radius: 25px;
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 0 auto;
+  font-family: Poppins-Medium;
+  font-size: 15px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+}
+
+.bg {
+  background: #333333;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .loginWrapper {
+    padding: 40px 15px 33px 15px;
+  }
+}
+
+.signupText {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.p-b-48 {
+  padding-bottom: 48px;
+}
+
+.p-b-26 {
+  padding-bottom: 26px;
+}
+
+/* .rightAnimate {
+  animation: rightAnimate 1s ease-out 1;
+  animation-fill-mode:forwards;
+}
+
+@keyframes rightAnimate {
+  0% {
+  }
+  100% {
+    transform: translateX(900px);
+  }
+}
+
+.leftAnimate {
+  animation: leftAnimate 1s ease-out 1;
+  animation-fill-mode: forwards;
+  z-index:999;
+}
+
+@keyframes leftAnimate {
+  0% {
+  }
+  100% {
+    transform: translateX(-365px);
+  }
+} */
