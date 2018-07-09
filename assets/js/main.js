@@ -1,7 +1,21 @@
-let inputElements = document.querySelectorAll('.inputElement');
-inputElements = Array.from(inputElements);
+// User object to hold all form data
+let userObj = {};
 
+// Select all placeholders of all input tags and then generate errors on them in the client-side firstly.
+let plcHldElements = Array.from(document.querySelectorAll('.focus-inputElement[data-placeholder]'));
+let placeholders = [];
+
+// plcHldElements.forEach((data) => {
+//     placeholders.push(data.getAttribute('data-placeholder'));
+// })
+
+
+// GENERAL INPUT ELEMENTS FROM SIGNUP
+let inputElements = Array.from(document.querySelectorAll('.inputElement'));
+
+// When an input has value, the placeholder shouldn't be down. Rather it should have this new class.
 inputElements.forEach((data) => {
+
     data.addEventListener("blur", () => {
         var str = data.value;
         if (str.trim() != "") {
@@ -10,7 +24,27 @@ inputElements.forEach((data) => {
             data.classList.remove('has-val');
         }
     });
+
+    var plcHolder = data.nextElementSibling.getAttribute('data-placeholder');
+    var plcHolderOld = plcHolder;
+
+    data.addEventListener("focusout", () => {
+        userObj[data.name] = data.value;
+        if (data.name.search("Name") !== -1) {
+            if (!(validateName(userObj[data.name]))) {
+                var textNode = " - Name should be more than 5 and less than 15 characters.";
+                if (plcHolder.search(textNode) == -1) //If it already exists, don't append
+                    plcHolder += textNode;
+                data.nextElementSibling.setAttribute('data-placeholder', plcHolder);
+            } else {
+                data.nextElementSibling.setAttribute('data-placeholder', plcHolderOld);
+            }
+        }
+    });
+
 });
+
+// Show or hide the password on login/signup
 
 var passBtn = document.querySelector('.btn-show-pass');
 var eyeBtn = document.querySelector('.btn-show-pass i');
@@ -31,3 +65,12 @@ passBtn.addEventListener('click', () => {
         showPass = 0;
     }
 });
+
+// GENERAL PURPOSE FUNCTIONS
+function validateName(name) {
+    if (name.length >= 5 && name.length <= 15) {
+        return true;
+    } else {
+        return false;
+    }
+}

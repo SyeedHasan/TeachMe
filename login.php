@@ -44,7 +44,7 @@ require 'includes/form_handlers/login_handler.php';
 						<span class="focus-inputElement" data-placeholder="Password"></span>
 					</div>
 
-					<?php if(in_array("Email or password was incorrect.<br>", $error_array)) echo "<p class='error'>Email or password was incorrect</p><br>"; ?>
+					<?php if(in_array("Email or password was incorrect.<br>", $error_array)) echo "<p class='error'>Email or password was incorrect<br>Please retry</p>"; ?>
 
 					<div class="cont-button">
 						<div class="bg">

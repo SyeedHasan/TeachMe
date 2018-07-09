@@ -24,30 +24,30 @@
 						<i class="zmdi zmdi-font"></i>
 					</span> -->
 					<div class="inputWrapper">
-						<input class="inputElement" type="text" name="firstName">
+						<input class="inputElement" type="text" name="firstName" required>
 						<span class="focus-inputElement" data-placeholder="First Name"></span>
 					</div>
 
 					<div class="inputWrapper">
-						<input class="inputElement" type="text" name="lastName">
+						<input class="inputElement" type="text" name="lastName" required>
 						<span class="focus-inputElement" data-placeholder="Last Name"></span>
 					</div>
 					
 					<div class="inputWrapper">
-						<input class="inputElement" type="text" name="userName">
+						<input class="inputElement" type="text" name="userName" required>
 						<span class="focus-inputElement" data-placeholder="User Name"></span>
 					</div>
 
 					<div class="inputWrapper">
-						<input class="inputElement" type="email" name="email">
+						<input class="inputElement" type="email" name="email" required>
 						<span class="focus-inputElement" data-placeholder="Email"></span>
 					</div>
 
-					<div class="inputWrapper">
+					<div class="inputWrapper" id="lastInput">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="inputElement" type="password" name="pass">
+						<input class="inputElement" type="password" minlength="6" maxlength="15" name="pass" required>
 						<span class="focus-inputElement" data-placeholder="Password"></span>
 					</div>
 

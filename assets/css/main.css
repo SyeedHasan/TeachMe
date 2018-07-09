@@ -166,7 +166,9 @@ textarea::-webkit-input-placeholder {
   width: 100%;
   height: 45px;
   background: transparent;
-  padding: 0 5px;
+  /* padding: 0 5px; */
+  padding: 20px 5px 3px 5px;
+
 }
 
 .focus-inputElement {
@@ -284,13 +286,18 @@ textarea::-webkit-input-placeholder {
 
 @media (max-width: 576px) {
   .loginWrapper {
-    padding: 40px 15px 33px 15px;
+    /* padding: 40px 15px 33px 15px; */
+    padding: 35px;
   }
 }
 
 .signupText {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 15px;
+}
+
+#lastInput {
+  margin-bottom: 20px;
 }
 
 .p-b-48 {
@@ -298,11 +305,13 @@ textarea::-webkit-input-placeholder {
 }
 
 .p-b-26 {
-  padding-bottom: 26px;
+  padding-top: 20px;
+  padding-bottom: 35px;
 }
 
 p.error {
   text-transform: uppercase;
+  padding-bottom: 25px;
   text-align: center;
   color: red;
   
