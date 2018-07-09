@@ -301,6 +301,13 @@ textarea::-webkit-input-placeholder {
   padding-bottom: 26px;
 }
 
+p.error {
+  text-transform: uppercase;
+  text-align: center;
+  color: red;
+  
+}
+
 /* .rightAnimate {
   animation: rightAnimate 1s ease-out 1;
   animation-fill-mode:forwards;
