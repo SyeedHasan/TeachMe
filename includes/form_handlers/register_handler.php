@@ -2,65 +2,57 @@
 
 $fname = ""; //first name
 $lname = ""; //last name
+$username = "";
 $em = ""; //email
-$em2 = ""; //confirm email 2
 $password = "";
-$password2 = "";
 $date = ""; //Signup date
 $error_array = array(); //holds all error messages
 
-if(isset($_POST['register_button'])){
+if(isset($_POST['registerButton'])){
     //Registration form values
     // $_POST means whatevers sent from the POST form.
     
-    $fname = strip_tags($_POST['reg_fname']);
+    $fname = strip_tags($_POST['firstName']);
     $fname = str_replace(' ', '', $fname);     //Replace spaces by blanks
     $fname = ucfirst(strtolower($fname));
-    $_SESSION['reg_fname'] = $fname;
+    $_SESSION['firstName'] = $fname;
 
-    $lname = strip_tags($_POST['reg_lname']);
+    $lname = strip_tags($_POST['lastName']);
     $lname = str_replace(' ', '', $lname);     //Replace spaces by blanks
     $lname = ucfirst(strtolower($lname));
-    $_SESSION['reg_lname'] = $lname;
+    $_SESSION['lastName'] = $lname;
 
-    $em = strip_tags($_POST['reg_email']);
+    $uname = strip_tags($_POST['userName']);
+    $uname = str_replace(' ', '', $uname);     //Replace spaces by blanks
+    $_SESSION['userName'] = $uname;
+
+    $em = strip_tags($_POST['signupEmail']);
     $em = str_replace(' ', '', $em);     //Replace spaces by blanks
     $em = ucfirst(strtolower($em));
-    $_SESSION['reg_email'] = $em;
+    $_SESSION['signupEmail'] = $em;
 
-    $em2 = strip_tags($_POST['reg_email2']);
-    $em2 = str_replace(' ', '', $em2);     //Replace spaces by blanks
-    $em2 = ucfirst(strtolower($em2));
-    $_SESSION['reg_email2'] = $em2;
-
-
-    $password = strip_tags($_POST['reg_password']);
-    $password2 = strip_tags($_POST['reg_password2']);
+    $password = strip_tags($_POST['signupPass']);
 
     $date = date("Y-m-d");
 
-    if($em == $em2){
-        if(filter_var($em, FILTER_VALIDATE_EMAIL)){
-            //Give filtered version of email to 'em'
-            $em = filter_var($em, FILTER_VALIDATE_EMAIL);
-            
-            //Check if email exists in the table
-            $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em' ");
+    //Email Validation
+    if(filter_var($em, FILTER_VALIDATE_EMAIL)){
+        //Give filtered version of email to 'em'
+        $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+        
+        //Check if email exists in the table
+        $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em' ");
 
-            //Counts the number of rows returned
-            $num_rows = mysqli_num_rows($e_check);
+        //Counts the number of rows returned
+        $num_rows = mysqli_num_rows($e_check);
 
-            if($num_rows > 0){
-                array_push($error_array, "Email already in use. <br>");
-            }
-
+        if($num_rows > 0){
+            array_push($error_array, "Email already in use. <br>");
         }
-        else {
-            array_push($error_array, "Invalid format! <br>");
-        }
+
     }
     else {
-        array_push($error_array, "Emails don't match <br>");
+        array_push($error_array, "Invalid format! <br>");
     }
 
     //Validate others
@@ -71,14 +63,19 @@ if(isset($_POST['register_button'])){
     if(strlen($lname) > 25 || strlen($lname) < 2) {
         array_push($error_array, "Your last name must be between 2 and 25 characters<br>");
     }
-
-    if($password != $password2){
-        array_push($error_array, "Your passwords do not match<br>");
+    
+    if(strlen($uname) > 25 || strlen($uname) < 2) {
+        array_push($error_array, "Your user name must be between 2 and 25 characters<br>");
     }
-    else {
-        if(preg_match('/[^A-Za-z0-9]/', $password)){
-            array_push($error_array, "Your password can only contain english characters or numbers<br>");
-        }
+
+    $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$uname'");
+    $num_rows = mysqli_num_rows($check_username_query);
+    if($num_rows > 0){
+        array_push($error_array, "Username already in use. <br>");
+    }
+
+    if(preg_match('/[^A-Za-z0-9]/', $password)){
+        array_push($error_array, "Your password can only contain english characters or numbers<br>");
     }
 
     if(strlen($password) > 30 || strlen($password) < 5 ){
@@ -89,40 +86,17 @@ if(isset($_POST['register_button'])){
     if(empty($error_array)){
         $password = md5($password); //encrypted password
 
-        //Generate username by concatenating firstName and lastName
-        $username = strtolower($fname . "_" . $lname);
+        $profile_pic = "assets/images/profile_pics/defaults/default.png";
 
-        //If this username is used, 
-        $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
-
-        $i = 0;
-        //If username exists, add number to username
-
-        while(mysqli_num_rows($check_username_query) != 0 ){
-            $i++;
-            $username = $username . "_" . $i;
-            $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
-        }
-
-        //Profile picture assignment
-        // $rand = rand(1,2); //Random number 
-        // if($rand == 1){
-            $profile_pic = "assets/images/profile_pics/defaults/pic.png";
-        // }
-        // else if(rand == 2){
-            // $profile_pic = "assets/images/profile_pics/defaults/pic.png";
-        // }
-
-
-        $query = mysqli_query($con, "INSERT INTO users VALUES('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',' ) ");
+        $query = mysqli_query($con, "INSERT INTO users VALUES('', '$fname', '$lname', '$uname', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',' ) ");
 
         array_push($error_array, "<span style='color:#14C800'>You're all set! Go ahead and login!</span>");
         
         //Clear the session
-        $_SESSION['reg_fname'] = "";
-        $_SESSION['reg_lname'] = "";
-        $_SESSION['reg_email'] = "";
-        $_SESSION['reg_email2'] = "";
+        $_SESSION['firstName'] = "";
+        $_SESSION['lastName'] = "";
+        $_SESSION['userName'] = "";
+        $_SESSION['signupEmail'] = "";
 
     }
 

@@ -32,7 +32,7 @@ inputElements.forEach((data) => {
         userObj[data.name] = data.value;
         if (data.name.search("Name") !== -1) {
             if (!(validateName(userObj[data.name]))) {
-                var textNode = " - Name should be more than 5 and less than 15 characters.";
+                var textNode = " - Name should be more than 2 and less than 25 characters.";
                 if (plcHolder.search(textNode) == -1) //If it already exists, don't append
                     plcHolder += textNode;
                 data.nextElementSibling.setAttribute('data-placeholder', plcHolder);
@@ -68,7 +68,7 @@ passBtn.addEventListener('click', () => {
 
 // GENERAL PURPOSE FUNCTIONS
 function validateName(name) {
-    if (name.length >= 5 && name.length <= 15) {
+    if (name.length >= 2 && name.length <= 25) {
         return true;
     } else {
         return false;

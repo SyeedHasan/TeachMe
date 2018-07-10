@@ -1,3 +1,11 @@
+<?php
+
+require 'config/config.php';
+require 'includes/form_handlers/register_handler.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +24,10 @@
 	<div class="mainDiv">
 		<div class="loginContainer">
 			<div class="loginWrapper">
-				<form class="loginForm">
+				<form class="loginForm" method="POST" action="signUp.php">
 					<span class="loginForm-title p-b-26">
 						Sign up
 					</span>
-					<!-- <span class="loginForm-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span> -->
 					<div class="inputWrapper">
 						<input class="inputElement" type="text" name="firstName" required>
 						<span class="focus-inputElement" data-placeholder="First Name"></span>
@@ -39,7 +44,7 @@
 					</div>
 
 					<div class="inputWrapper">
-						<input class="inputElement" type="email" name="email" required>
+						<input class="inputElement" type="email" name="signupEmail" required>
 						<span class="focus-inputElement" data-placeholder="Email"></span>
 					</div>
 
@@ -47,13 +52,26 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="inputElement" type="password" minlength="6" maxlength="15" name="pass" required>
+						<input class="inputElement" type="password" minlength="5" maxlength="25" name="signupPass" required>
 						<span class="focus-inputElement" data-placeholder="Password"></span>
 					</div>
 
+					<!-- Check for every error in the list -->
+					<?php if(in_array("Your first name must be between 2 and 25 characters.<br>", $error_array)) echo "<p class='errors'>Your first name must be between 2 and 25 characters</p>" ?>
+			        <?php if(in_array("Your last name must be between 2 and 25 characters<br>", $error_array)) echo "<p class='errors'>Your last name must be between 2 and 25 characters</p>" ?>
+					<?php if(in_array("Your user name must be between 2 and 25 characters<br>", $error_array)) echo "<p class='errors'>Your user name must be between 2 and 25 characters</p>" ?>
+					<?php if(in_array("Username already in use. <br>", $error_array)) echo "<p class='errors'>Username already in use</p>" ?>
+
+					<?php if(in_array("Email already in use. <br>", $error_array)) echo "<p class='errors'>Email already in use</p>";
+					if(in_array("Invalid format! <br>", $error_array)) echo "<p class='errors'>Invalid format!</p>"; ?>
+
+					<?php
+					if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "<p class='errors'>Your password can only contain english characters or numbers</p>";
+					if(in_array("Your password must be between 5 and 25 characters<br>", $error_array)) echo "<p class='errors'>Your password must be between 5 and 25 characters</p>" ?>
+
 					<div class="cont-button">
 						<div class="bg">
-							<input class="loginButton" type="submit" value="Sign Up">
+							<input class="loginButton" name="registerButton" type="submit" value="Sign Up">
 						</div>
 					</div>
 
@@ -66,6 +84,8 @@
 							Log In
 						</a>
 					</div>
+					<!-- FIX THIS IF U WANT TO USE IT -->
+					<?php   if(in_array("<span style='color:#14C800'>You're all set! Go ahead and login!</span>", $error_array)) echo "<span class='correctSignup'>You're all set! Go ahead and login!</span>"; ?>
 
 				</form>
 			</div>
