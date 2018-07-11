@@ -12,9 +12,18 @@
 </head>
 <body>
 
-    <div class="nav">   
-        <p class="logo" >EdModo</p>
-
+    <div class="nav">
+        <ul class="nav-linksLeft">
+            <li>Home</li>
+            <li>Classes</li>
+            <li>Profile</li>
+        </ul>
+        <!-- <p class="logo" >EdModo</p> -->
+        <ul class="nav-linksRight">
+            <li>Home</li>
+            <li>Classes</li>
+            <li>Profile</li>
+        </ul>
     </div>
 
 
