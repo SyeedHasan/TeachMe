@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/icons/favicons/icons.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
     <link rel="stylesheet" 
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
@@ -29,35 +32,56 @@
             <li>Profile</li>
         </ul>
     </div> -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-  <a class="navbar-brand" href="#"> 
+    <nav class="navbar navbar-expand-xl navbar-dark bg-black">
+  <a class="navbar-brand" href="index.php"> 
       <img src="assets/images/logos/pl.png" width="30" height="30" alt=""></a>
+
+      <!-- These are the logos without the toggling effect applied to them -->
+          <div class="d-flex order-lg-1 mr-auto pr-2">
+        <ul class="navbar-nav flex-row">
+            <li class="nav-item mx-2 mx-lg-0">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Register</a>
+            </li>
+        </ul>
+    </div>
+
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <i class="fas fa-bars"></i>
   </button>
 
+<!-- Icons to be toggled -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"><i class="fas fa-home"></i>Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>Classes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-book"></i>Assignments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-list-ul"></i>To-Do</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+        <i class="fas fa-chevron-down"></i>More
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">Settings</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Log Out</a>
         </div>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+      </li> -->
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

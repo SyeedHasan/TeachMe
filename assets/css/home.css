@@ -1,19 +1,63 @@
-.nav-item:hover{
-    transition: all 0.5s;
-}
-.navbar{
-    height: 45px;
-    padding:0.5 1rem;
+/* .nav-item:hover {
+    transition: all 1.5s;
+} */
+
+.navbar-nav {
+    margin: 0 15px;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover{
-    color:#17a2b8;
-    font-weight: bold;
+.navbar {
+    height: 60px;
+    /* height: 45px; Increased it, since there is no background color anymore. */
+    padding: 0.5rem 1rem;
 }
-.bg-black{
-    background:black;
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #17a2b8;
+    /* font-weight: bold; */
+    /* background: white; */
+    transition: all 1.0s;
 }
-.logo {
+
+.bg-black {
+    background: black;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+a.nav-link i {
+    /* display: block; See if you want it up or by the left. */
+    margin-right: 10px;
+    text-align: center;
+    /* padding-right: 10px; */
+}
+
+.collapse.show {
+    display: block;
+    background: black;
+    height: 290px;
+}
+
+.form-inline {
+    margin: 14px 34px;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+/* Hamburger on toggle */
+.fa-bars {
+    color: white;
+}
+
+/* OLD CODE. DON'T DELETE. */
+
+/* OLD NAVBAR */
+
+/* .logo {
     padding-top: 0px;
     font-size: 25px;
     text-align: center;
@@ -29,7 +73,7 @@
 .nav-linksRight {
     display: inline-block;
     line-height: 25px;
-    float: right;
+    /* float: right; 
     margin-right: 25px;
 }
 
@@ -39,3 +83,5 @@
     padding: 5px 15px;
     list-style-type: none;
 }
+
+*/
