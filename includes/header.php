@@ -39,14 +39,14 @@ if (isset($_SESSION['username'])) {
 
     <nav class="navbar navbar-expand-xl navbar-dark bg-black">
 
+        <a class="navbar-brand" href="index.php">
+            <img src="assets/images/logos/pl.png" width="30" height="30" alt="">
+        </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
-
-        <a class="navbar-brand" href="index.php">
-            <img src="assets/images/logos/pl.png" width="30" height="30" alt="">
-        </a>
 
 
         <!-- These are the logos without the toggling effect applied to them -->
@@ -75,7 +75,7 @@ if (isset($_SESSION['username'])) {
                         <i class="fas fa-graduation-cap"></i>Classes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="assignments.php">
                         <i class="fas fa-book"></i>Assignments</a>
                 </li>
                 <!-- <li class="nav-item">
