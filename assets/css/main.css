@@ -286,11 +286,9 @@ textarea::-webkit-input-placeholder {
     /* padding: 40px 15px 33px 15px; */
     padding: 35px;
   }
-
   span.correctSignup {
     margin-left: 14%;
   }
-
 }
 
 .signupText {

@@ -1,10 +1,6 @@
 body {
     min-width: 450px;
-<<<<<<< HEAD
     background: #EEE;
-=======
-    background-color: #eee;
->>>>>>> bd9d8e89c090087181564efa21d3465129c445a3
 }
 
 /* .nav-item:hover {
@@ -54,10 +50,11 @@ a.nav-link i {
 }
 
 .dropdown-toggle::after {
-    display:none;
+    display: none;
 }
 
 /* Hamburger on toggle */
+
 .fa-bars {
     color: white;
 }
