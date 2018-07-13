@@ -21,6 +21,8 @@ if(isset($_POST['loginButton'])){
         //Login successfully
         $row = mysqli_fetch_array($check_database_query);
         $username = $row['username'];
+        $firstName = $row['first_name'];
+        $lastName = $row['last_name'];
 
         $user_closed_query = mysqli_query($con, "SELECT * FROM users WHERE EMAIL='$email' AND user_closed='yes' ");
 
@@ -32,6 +34,8 @@ if(isset($_POST['loginButton'])){
 
         //New session for user
         $_SESSION['username'] = $username;
+        $_SESSION['firstName'] = $firstName;
+        $_SESSION['lastName'] = $lastName;
 
         //After login, move to
         header("Location: index.php");

@@ -44,6 +44,8 @@ inputElements.forEach((data) => {
 
 });
 
+
+
 // Show or hide the password on login/signup
 
 var passBtn = document.querySelector('.btn-show-pass');

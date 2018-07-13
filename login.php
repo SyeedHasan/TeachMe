@@ -3,6 +3,10 @@
 require 'config/config.php';
 require 'includes/form_handlers/login_handler.php';
 
+if(isset($_SESSION['username'])){
+	header("Location: index.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +27,6 @@ require 'includes/form_handlers/login_handler.php';
 </head>
 
 <body>
-
 	<div class="mainDiv">
 		<div class="loginContainer">
 			<div class="loginWrapper">
@@ -36,7 +39,7 @@ require 'includes/form_handlers/login_handler.php';
 					</span> -->
 
 					<div class="inputWrapper">
-						<input class="inputElement" type="email" name="loginEmail">
+						<input class="inputElement" type="email" name="loginEmail" value="" required>
 						<span class="focus-inputElement" data-placeholder="Email"></span>
 					</div>
 
@@ -44,7 +47,7 @@ require 'includes/form_handlers/login_handler.php';
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="inputElement" type="password" name="loginPassword">
+						<input class="inputElement" type="password" name="loginPassword" required>
 						<span class="focus-inputElement" data-placeholder="Password"></span>
 					</div>
 
@@ -75,6 +78,7 @@ require 'includes/form_handlers/login_handler.php';
 	</div>
 
 	<script src="assets/js/main.js"></script>
+	<script> checkForValues(); </script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

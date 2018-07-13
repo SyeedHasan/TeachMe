@@ -1,3 +1,7 @@
+body {
+    min-width: 450px;
+}
+
 /* .nav-item:hover {
     transition: all 1.5s;
 } */
@@ -85,3 +89,7 @@ a.nav-link i {
 }
 
 */
+
+.navbar-dark .navbar-nav .white {
+    color: white;
+}
