@@ -65,7 +65,7 @@ if (isset($_SESSION['username'])) {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="index.php">
                         <i class="fas fa-home"></i>Home
                         <span class="sr-only">(current)</span>
                     </a>
