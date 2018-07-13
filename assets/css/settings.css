@@ -21,11 +21,14 @@ li.link a {
     width: 100%;
     height: 20px;
 }
-
+li.link p{
+    height:9px;
+}
 li.link a:hover {
     text-decoration: none;
     color: black;
 }
+
 
 .contents {
     list-style-type: none;
