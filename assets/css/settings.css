@@ -10,7 +10,11 @@
     padding-left: 10px;
 }
 
-a {
+/* um, don't access elements with their general tags. Since they're used up almost everywhere. 
+Be more specific to get proper results. 
+Remove comment after reding 
+*/
+li.link a {
     color: black;
     margin: 0px;
     display: block;
@@ -18,7 +22,7 @@ a {
     height: 100%;
 }
 
-a:hover {
+li.link a:hover {
     text-decoration: none;
     color: black;
 }
@@ -39,7 +43,7 @@ a:hover {
 }
 
 .link:hover {
-    background-color: red;
+    background-color: #17a2b8;
 }
 
 .linkBorderA {
@@ -60,4 +64,3 @@ td {
     width: 299px;
 }
 
-tr {}
