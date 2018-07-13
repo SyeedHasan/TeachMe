@@ -75,7 +75,7 @@ if (isset($_SESSION['username'])) {
                         <i class="fas fa-graduation-cap"></i>Classes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="assignments.php">
                         <i class="fas fa-book"></i>Assignments</a>
                 </li>
                 <!-- <li class="nav-item">
