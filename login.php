@@ -13,7 +13,7 @@ if(isset($_SESSION['username'])){
 <html lang="en">
 
 <head>
-	<title>Log In</title>
+	<title>Plentree - Log In</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" 
@@ -27,6 +27,7 @@ if(isset($_SESSION['username'])){
 </head>
 
 <body>
+
 	<div class="mainDiv">
 		<div class="loginContainer">
 			<div class="loginWrapper">

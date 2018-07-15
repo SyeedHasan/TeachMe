@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+
+?>
+
 <html lang="en">
 
 <head>
@@ -51,7 +54,6 @@
     </div>
 
     <div class="mainHeader colorB">
-
         <!-- FEATURES -->
 
         <div class="content">
@@ -185,11 +187,12 @@
 
 
         </div>
+        
+        <small style="background:black; display:block; width:100%; color:white; text-align:center;">All Rights Reserved - PlenTree (2018)</small>
 
 
     </div>
 
-    <small style="background:black; display:block; width:100%; color:white; text-align:center;">All Rights Reserved - PlenTree (2018)</small>
 
 
 </body>

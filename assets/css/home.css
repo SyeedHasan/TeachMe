@@ -1,3 +1,6 @@
+
+/* CONTAINS CODE FOR NAVBAR */
+
 @font-face {
     font-family: RobotoSlab-Regular;
     src: url('../fonts/Roboto_Slab/RobotoSlab-Regular.ttf');
@@ -66,39 +69,6 @@ a.nav-link i {
 .fa-bars {
     color: white;
 }
-
-/* OLD CODE. DON'T DELETE. */
-
-/* OLD NAVBAR */
-
-/* .logo {
-    padding-top: 0px;
-    font-size: 25px;
-    text-align: center;
-    margin: 0 auto;
-    font-weight: bold;
-}
-
-.nav-linksLeft {
-    display: inline-block;
-    line-height: 25px;
-}
-
-.nav-linksRight {
-    display: inline-block;
-    line-height: 25px;
-    /* float: right; 
-    margin-right: 25px;
-}
-
-.nav-linksRight li,
-.nav-linksLeft li {
-    display: inline;
-    padding: 5px 15px;
-    list-style-type: none;
-}
-
-*/
 
 .navbar-dark .navbar-nav .white {
     color: white;

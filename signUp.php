@@ -10,7 +10,7 @@ require 'includes/form_handlers/register_handler.php';
 <html lang="en">
 
 <head>
-	<title>Student Sign Up</title>
+	<title>Plentree - Sign Up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" 
