@@ -18,9 +18,11 @@ body {
 
 .navbar {
     height: 60px;
-    font-family: 'Roboto Slab';
+    /* font-family: 'Roboto Slab'; */
     /* height: 45px; Increased it, since there is no background color anymore. */
     padding: 0.5rem 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(0, 0, 0, 0.23);
+
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {

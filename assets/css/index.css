@@ -44,11 +44,11 @@ div.colorA {
     height: 91vh;
 }
 
-div.mainHeader h3 {
+div.mainHeader h3.head {
     font-size: 35px;
 }
 
-div.mainHeader p {
+div.mainHeader p.content-summary {
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -90,37 +90,90 @@ div.colorB {
 }
 
 div.content {
+    background-color: rgba(255, 255, 255, 0.75);
     width: 80%;
-    height: 300px;
-    margin: 20px auto;
-    background: white;
+    padding: 20px;
+    margin: 0 auto;
     border-radius: 10px;
+    /* height: 100%; */
+    margin-bottom: 20px;
+    /* overflow: hidden; */
+    position: relative;
+    min-width: 500px;
 }
 
-div.imgContainer {
-    width: 50%;
-    height: 100%;
+/* FOR CONTAINERS WITH LEFT ALIGNMENT */
+
+div.content .imgContainer {
     float: left;
+    vertical-align: middle;
     text-align: center;
-    padding-top: 30px;
+    overflow: hidden;
+    padding: 25px;
 }
 
-
-div.contentContainer {
-    float: right;
-    width: 50%;
-    height: 100%;
-    text-align: center;
+div.content .contentContainer {
+    overflow: hidden;
+    padding: 10px;
 }
 
-div.contentContainer h1 {
-    padding-top: 20px;
-    text-align: left;
+.contentContainer h1 {
     font-size: 30px;
+    text-align: center;
+    letter-spacing: -1px;
 }
 
-div.contentContainer p {
-    text-align: left;
+.contentContainer .content-summary {
+    font-size: 14px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    div.content .imgContainer {
+        float: none;
+        margin-right: 0;
+        width: auto;
+        border: 0;
+    }
+}
+
+/* FOR CONTAINERS WITH RIGHT ALIGNMENT */
+
+div.content .imgContainer-right {
+    float: right;
+    vertical-align: middle;
+    text-align: center;
+    overflow: hidden;
+    padding: 25px;
+}
+
+div.content .contentContainer-left {
+    overflow: hidden;
+    padding: 10px;
+}
+
+.contentContainer-left h1 {
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.contentContainer-left .content-summary {
+    font-size: 14px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+/* GENERAL PURPOSE MEDIA QUERIES */
+
+@media screen and (max-width: 1068px) {
+    div.content .imgContainer-right {
+        float: none;
+        margin-right: 0;
+        width: auto;
+        border: 0;
+    }
 }
 
 @media (max-width: 730px) {
@@ -159,3 +212,96 @@ div.contentContainer p {
         height: 50%;
     }
 }
+
+/* FOOTER CSS */
+
+div.footer {
+    position: relative;
+    min-width: 500px;
+    width: 90%;
+    background: #191919;
+    padding-bottom: 50px;
+    margin: 100px auto 70px auto;
+}
+
+div.leftInfo {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    color: white;
+    padding: 25px;
+}
+
+div.leftInfo h3 {
+    font-size: 19px;
+}
+
+hr.style1 {
+    border-top: 1px solid #8c8b8b;
+}
+
+div.leftInfo p {
+    font-size: 15px;
+}
+
+div.rightInfo {
+    overflow: hidden;
+    color: white;
+    padding: 25px;
+}
+
+div.rightInfo h3 {
+    color: white;
+    font-size: 19px;
+}
+
+div.socials {
+    padding-top: 30px;
+}
+
+@media screen and (max-width: 900px) {
+    div.leftInfo {
+        float: none;
+        margin-right: 0;
+        width: auto;
+        border: 0;
+    }
+}
+
+/* 
+div.content {
+    width: 80%;
+    height: 300px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+}  
+div.imgContainer {
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 30px;
+}
+
+div.imgContainer img {
+    max-width: 100%;
+    height: auto;
+}
+
+div.contentContainer {
+    float: right;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+div.contentContainer h1 {
+    padding-top: 20px;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+div.contentContainer p {
+    text-align: left;
+} */
