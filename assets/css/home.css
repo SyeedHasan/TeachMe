@@ -1,3 +1,8 @@
+@font-face {
+    font-family: RobotoSlab-Regular;
+    src: url('../fonts/Roboto_Slab/RobotoSlab-Regular.ttf');
+}
+
 body {
     min-width: 450px;
     background: #EEE;
@@ -13,6 +18,7 @@ body {
 
 .navbar {
     height: 60px;
+    font-family: 'Roboto Slab';
     /* height: 45px; Increased it, since there is no background color anymore. */
     padding: 0.5rem 1rem;
 }

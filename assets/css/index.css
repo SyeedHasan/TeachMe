@@ -1,0 +1,161 @@
+@font-face {
+    font-family: RobotoSlab-Regular;
+    src: url('../fonts/Roboto_Slab/RobotoSlab-Regular.ttf');
+}
+
+body {
+    font-family: 'Roboto Slab';
+}
+
+.navbar {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(0, 0, 0, 0.23);
+}
+
+a.navbar-brand {
+    font-size: 20px;
+}
+
+.navbar-dark .navbar-brand:focus,
+.navbar-dark .navbar-brand:hover {
+    color: #17a2b8;
+    transition: all 1.0s;
+}
+
+.firstLetter {
+    font-size: 25px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #17a2b8;
+    transition: all 1.0s;
+}
+
+div.mainHeader {
+    width: 100%;
+    text-transform: uppercase;
+    padding-top: 25px;
+}
+
+div.colorA {
+    background: #E3F2FD;
+    text-align: center;
+    height: 91vh;
+}
+
+div.mainHeader h3 {
+    font-size: 35px;
+}
+
+div.mainHeader p {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 5px;
+}
+
+a.button {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    /* border: 0.1em solid white; */
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-align: center;
+    background: #120B1E;
+    transition: all 0.9s;
+}
+
+a.button:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+div.mainHeader img.colorA-img {
+    padding-top: 20px;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    height: 65%;
+}
+
+div.colorB {
+    background: #BBDEFB;
+    height: 100%;
+}
+
+div.content {
+    width: 80%;
+    height: 300px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+}
+
+div.imgContainer {
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+div.contentContainer {
+    float: right;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+div.contentContainer h1 {
+    padding-top: 20px;
+    text-align: left;
+    font-size: 30px;
+}
+
+div.contentContainer p {
+    text-align: left;
+}
+
+@media (max-width: 730px) {
+    div.mainHeader img.colorA-img {
+        padding-top: 20px;
+        display: block;
+        width: 85%;
+        margin: 0 auto;
+        height: 50%;
+    }
+}
+
+@media (max-width: 550px) {
+    div.mainHeader img.colorA-img {
+        padding-top: 20px;
+        display: block;
+        width: 85%;
+        margin: 0 auto;
+        height: 55%;
+    }
+    div.content img {
+        margin: 25px 20px;
+    }
+}
+
+@media (max-width: 492px) {
+    div.mainHeader img.colorA-img {
+        padding-top: 20px;
+        display: block;
+        width: 93%;
+        margin: 0 auto;
+        height: 48%;
+    }
+    div.content img {
+        margin: 25px 9px;
+        height: 50%;
+    }
+}
