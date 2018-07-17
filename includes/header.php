@@ -1,6 +1,8 @@
 <?php
 
 require 'config/config.php';
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
 
 if (isset($_SESSION['username'])) {
     //If user is logged in, it contains the username
@@ -33,6 +35,7 @@ if (isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/home.css">
+
 </head>
 
 <body>
