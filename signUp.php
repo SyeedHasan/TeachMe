@@ -10,7 +10,7 @@ require 'includes/form_handlers/register_handler.php';
 <html lang="en">
 
 <head>
-	<title>Student Sign Up</title>
+	<title>Plentree - Sign Up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" 
@@ -75,7 +75,7 @@ require 'includes/form_handlers/register_handler.php';
 
 					<div class="cont-button">
 						<div class="bg">
-							<input class="loginButton" name="registerButton" type="submit" value="Sign Up">
+							<input class="loginButton" name="registerButton" type="submit" value="Proceed">
 						</div>
 					</div>
 
@@ -88,8 +88,12 @@ require 'includes/form_handlers/register_handler.php';
 							Log In
 						</a>
 					</div>
+
 					<!-- FIX THIS IF U WANT TO USE IT -->
-					<?php   if(in_array("<span style='color:#14C800'>You're all set! Go ahead and login!</span>", $error_array)) echo "<span class='correctSignup'>You're all set! Go ahead and login!</span>"; ?>
+					 <?php 
+						// Redirect using this maybe? To the next page with the data from this page.  
+					 	//  if(in_array("<span style='color:#14C800'>You're all set! Go ahead and login!</span>", $error_array)) echo "<span class='correctSignup'>You're all set! Go ahead and login!</span>"; 
+					 ?> 
 
 				</form>
 			</div>

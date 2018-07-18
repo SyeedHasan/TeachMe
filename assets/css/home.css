@@ -1,3 +1,5 @@
+/* CONTAINS CODE FOR NAVBAR AND INDEX */
+
 @font-face {
     font-family: RobotoSlab-Regular;
     src: url('../fonts/Roboto_Slab/RobotoSlab-Regular.ttf');
@@ -5,7 +7,8 @@
 
 body {
     min-width: 450px;
-    background: #EEE;
+    background:#EEF2F6;
+    font-family: 'Century Gothic';
 }
 
 /* .nav-item:hover {
@@ -18,9 +21,10 @@ body {
 
 .navbar {
     height: 60px;
-    font-family: 'Roboto Slab';
+    /* font-family: 'Roboto Slab'; */
     /* height: 45px; Increased it, since there is no background color anymore. */
     padding: 0.5rem 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(0, 0, 0, 0.23);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
@@ -65,39 +69,185 @@ a.nav-link i {
     color: white;
 }
 
-/* OLD CODE. DON'T DELETE. */
+.navbar-dark .navbar-nav .white {
+    color: white;
+}
 
-/* OLD NAVBAR */
+/* CODE FOR INDEX.PHP */
 
-/* .logo {
-    padding-top: 0px;
-    font-size: 25px;
+div.mainContainer {
+    width: 90%;
+    margin: 0px auto;
+    height: 700px;
+    margin-bottom:50px;
+}
+
+div.userInfo {
+    width: 250px;
+    border-radius:5px;
+    height: 500px;
+    background: white;
+    position: relative;
+    left: 20px;
+    top: 50px;
     text-align: center;
-    margin: 0 auto;
+}
+
+div.postArea {
+    width: 600px;
+    background: white;   
+    height: 100%;    
+    border-radius:5px;
+    position: absolute;
+    top: 110px;
+    left: 350px;
+}
+
+div.classInfo {
+    width: 250px;
+    background: white;
+    height: 350px;
+    position: absolute;
+    left: 960px;
+    border-radius:5px;
+    top: 110px;
+    text-align: center;
+}
+
+img.userPic {
+    margin: 10px;
+    border-radius: 50%;
+}
+
+div.allInfo {
+    text-align: left;
+    padding-left:20px;
+
+}
+
+p.name {
+    font-size: 20px;
+}
+
+p label {
     font-weight: bold;
 }
 
-.nav-linksLeft {
-    display: inline-block;
-    line-height: 25px;
+hr {
+    margin: 0.5rem 0;
+    padding: 0;
 }
 
-.nav-linksRight {
-    display: inline-block;
-    line-height: 25px;
-    /* float: right; 
-    margin-right: 25px;
+.post_form {
+    width: 100%;
 }
 
-.nav-linksRight li,
-.nav-linksLeft li {
-    display: inline;
-    padding: 5px 15px;
-    list-style-type: none;
+.post_form textarea {
+    width: 81%;
+    height: 60px;
+    border-radius: 3px;
+    margin: 0px 50px;
+    border: 1px solid #D3D3D3;
+    font-size: 14px;
+    padding: 5px;
+    resize:none;
 }
 
-*/
+textarea:focus {
+    outline: 0;
+}
 
-.navbar-dark .navbar-nav .white {
+.post_form input[type="submit"] {
+    width: 15%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: black;
+    display: block;
     color: white;
+    font-size: 90%;
+    position: absolute;
+    outline: 0;
+    right:35px;
+    top:115px;
+    margin: 0;
+}
+
+#cancel_button {
+    right: 135px;
+}
+
+.post_form input:hover {
+    background: white;
+    color: black;
+    transition: all 1.5s;
+}
+
+div.main_column {
+    padding-top: 20px;
+    background: #EEE;
+    border: 1px solid whitesmoke;
+    height: 170px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.post_form input[type="submit"]:active {
+    padding: 5px 4px 4px 5px;
+}
+
+div.logos {
+    display: inline-block;
+    width:250px;
+    margin: 14px 50px;
+    text-align: center;
+}
+
+div.logos i {
+    padding:10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.logos i:hover {
+    background: white;
+    transition: all 1.5s;
+}
+
+div.posts_area {
+    background: #FFF;
+    border-radius:5px;
+    margin-top:20px;
+    /* height:500px; Fix this then uncomment */
+    width:100%;
+    margin:0 auto;
+}
+
+.head {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+div.classInfo p {
+    margin: 10px;
+}
+
+#joinClass {
+    border: none;
+    border-radius: 3px;
+    background-color: black;
+    display: block;
+    color: white;
+    font-size: 90%;
+    outline: 0;
+    padding: 5px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#joinClass:hover {
+    background: #EEE;
+    transition: all 1.5s;
+    color: black;
 }
