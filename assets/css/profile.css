@@ -1,0 +1,26 @@
+
+body {
+    min-width: 100%;
+}
+
+div.cover {
+    width: 100%;
+    height:300px;
+    margin-top: 0px;
+    background: gray;
+    background: url('../../assets/images/login/bg.jpg');
+    background-size: cover;
+    opacity: 0.5;
+}
+
+div.profilePic {
+    position: absolute;
+    width:180px;
+    height:180px;
+    background: black;
+    border-radius: 50%;
+    left:40%;
+    top:260px;
+    background: url('../../assets/images/profile_pics/defaults/default.png');
+    background-size: cover;
+}

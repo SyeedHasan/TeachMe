@@ -53,6 +53,7 @@ a.nav-link i {
     display: block;
     background: black;
     height: 290px;
+    z-index: 1;
 }
 
 .form-inline {

@@ -1,6 +1,9 @@
 <?php
     include 'includes/header.php';
-?><link rel="stylesheet" href="assets/css/settings.css">
+?>
+
+<link rel="stylesheet" href="assets/css/settings.css">
+
 <div class="mainClass">
     <ul class="contents">
     <li class="link linkBorderA" onclick="location.href = 'http://stackoverflow.com/questions/3486110/make-a-list-item-clickable-html-css';"><a class="anchorTags" href="#">Personal Information</a></li>

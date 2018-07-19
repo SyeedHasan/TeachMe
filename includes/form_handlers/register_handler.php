@@ -98,6 +98,8 @@ if(isset($_POST['registerButton'])){
         $_SESSION['userName'] = "";
         $_SESSION['signupEmail'] = "";
 
+        // header("Location: login.php");
+
     }
 
 }
