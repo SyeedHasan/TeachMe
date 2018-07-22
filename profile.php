@@ -11,7 +11,13 @@
 <div class="mainBody">
     
     <div class="profilePic">
+    
+    </div>
 
+    <div class="mainContent">
+        <h4 class="profileName"><?php echo $user['first_name'] . " " . $user['last_name']; ?></h4>
+        <hr>
+    
     </div>
     
 </div>

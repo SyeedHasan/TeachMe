@@ -16,11 +16,9 @@ include("includes/header.php");
         <div class="messagesInfo">
             <p id="recent">Recent Messages</p>
             <hr>
-            <ul>
-
+                
                 <!-- LOADED CONVOS HERE! -->
 
-            </ul>
         </div>
 
     </div>

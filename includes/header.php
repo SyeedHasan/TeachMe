@@ -1,8 +1,9 @@
 <?php
 
 require 'config/config.php';
-// include("includes/classes/User.php");
-// include("includes/classes/Post.php");
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
+include("includes/classes/Quiz.php");
 
 if (isset($_SESSION['username'])) {
     //If user is logged in, it contains the username
