@@ -4,19 +4,11 @@ include("includes/header.php");
 $currQuiz = new Quiz($con);
 
 if(isset($_POST['selectedQuiz'])) {
-    echo '
-    <style> 
-        div.column {
-            display:none;
-        }
-    </style>';
-
+    
     $userChoice = $_POST['quizName'];
-    $currQuiz->returnQuizQuestions($userChoice);
-}
-
-if(isset($_POST['submitQuiz'])){
-    // header("Location: quizResult.php");
+    $_SESSION['quizName'] = $userChoice;
+    header("Location: giveQuiz.php");
+    // $currQuiz->returnQuizQuestions($userChoice);
 }
 
 ?>
