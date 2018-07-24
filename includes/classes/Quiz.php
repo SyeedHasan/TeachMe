@@ -120,6 +120,7 @@ class Quiz
         }
 
         // MAKE CHANGES TO THE DATABASE
+            // ONLY WHEN THE FINAL DB IS MADE!
 
         return $userMarks;
 

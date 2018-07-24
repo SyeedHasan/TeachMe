@@ -16,6 +16,7 @@ $qsNo = $currQuiz->returnNoOfQuestions($GLOBALS['quizNo']);
         <h4>Result Page</h4>
         <hr>
         <h5>Marks Obtained: <?php echo $userMarks; ?> out of <?php echo $qsNo; ?></h5>
+        <!-- FIX THE DB PART IN THE FUNCTION LINE 122 (FINAL DB BUILD!!) -->
         <h5>YOU <?php $currQuiz->getStatus($userMarks, $qsNo); ?></h5>
         <small>Your records have been updated. Kindly check your marks in the most recent transcript.</small>
         <small>Press 'Return' to enter to the home page</small>
