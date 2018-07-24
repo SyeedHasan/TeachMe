@@ -96,7 +96,7 @@ if (isset($_SESSION['username'])) {
                         <a class="dropdown-item" href="messages.php">Messages</a>
                         <a class="dropdown-item" href="settings.php">Settings</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul"></i>To-Do</a>
+                        <a class="dropdown-item" href="quiz.php"><i class="fas fa-list-ul" style="margin-right:10px;"></i>Quiz</a>
                     </div>
                 </li>
             </ul>
