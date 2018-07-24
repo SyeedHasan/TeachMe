@@ -91,3 +91,28 @@ form.column2 input[type="submit"] {
     border: 0;
     outline: 0;
 }
+
+div.data h4 {
+    text-transform: none;
+}
+
+div.column h5 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+small {
+    display:block;
+    text-align: center;
+}
+
+div.data input[type="button"] {
+    display: block;
+    width: 190px;
+    height: 40px;
+    background: black;
+    margin:0 auto;
+    color: white;
+    border: 0;
+    outline: 0;
+}

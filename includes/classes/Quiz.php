@@ -119,8 +119,21 @@ class Quiz
             }
         }
 
+        // MAKE CHANGES TO THE DATABASE
+
         return $userMarks;
 
+    }
+
+    public function getStatus($marks, $total)
+    {
+        $percentage = ($marks / $total) * 100;
+        if($percentage >= 50){
+            echo 'PASSED!';
+        }
+        else {
+            echo 'FAILED!';
+        }
     }
 
 }
