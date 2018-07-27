@@ -69,3 +69,9 @@ td {
     width: 299px;
 }
 
+.fa, .fas {
+    float:right;
+    margin-right:10px;
+    font-size:13px;
+    margin-top:4px;
+}
