@@ -8,7 +8,7 @@ session_start();
 
 $timezone = date_default_timezone_set("Asia/Karachi");
 
-$con = mysqli_connect("localhost", "root", "", "projectPortal");
+$con = mysqli_connect("localhost", "root", "", "tsp");
 //Connection variable used everywhere in the project
 
 if(mysqli_connect_errno()){

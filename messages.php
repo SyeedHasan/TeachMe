@@ -9,8 +9,8 @@ include("includes/header.php");
 
     <div class="leftContainer">
         <div class="profileInfo">
-            <img class="userPic" src="<?php echo $user['profile_pic'] ?>" alt=""> 
-            <p class="name"><?php echo $user['first_name'] . " " . $user['last_name']; ?></p>
+            <img class="userPic" src="<?php echo $user['pictureLink'] ?>" alt=""> 
+            <p class="name"><?php echo $user['fName'] . " " . $user['lName']; ?></p>
         </div>
 
         <div class="messagesInfo">

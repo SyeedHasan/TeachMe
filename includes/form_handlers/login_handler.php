@@ -13,7 +13,7 @@ if(isset($_POST['loginButton'])){
     //Change to md5, then compare from db.
     $password = md5($_POST['loginPassword']);
 
-    $check_database_query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' AND password='$password' ");
+    $check_database_query = mysqli_query($con, "SELECT * FROM regUser WHERE email='$email' AND password='$password' ");
 
     $check_login_query = mysqli_num_rows($check_database_query);
 
@@ -21,16 +21,8 @@ if(isset($_POST['loginButton'])){
         //Login successfully
         $row = mysqli_fetch_array($check_database_query);
         $username = $row['username'];
-        $firstName = $row['first_name'];
-        $lastName = $row['last_name'];
-
-        $user_closed_query = mysqli_query($con, "SELECT * FROM users WHERE EMAIL='$email' AND user_closed='yes' ");
-
-        //Reopen account if closed
-        if(mysqli_num_rows($user_closed_query) == 1){
-            $reopen_account = mysqli_query($con, "UPDATE users SET user_closed='no' WHERE email='$email' ");
-        }
-
+        $firstName = $row['fName'];
+        $lastName = $row['lName'];
 
         //New session for user
         $_SESSION['username'] = $username;

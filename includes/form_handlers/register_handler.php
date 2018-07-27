@@ -41,7 +41,7 @@ if(isset($_POST['registerButton'])){
         $em = filter_var($em, FILTER_VALIDATE_EMAIL);
         
         //Check if email exists in the table
-        $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em' ");
+        $e_check = mysqli_query($con, "SELECT email FROM regUser WHERE email='$em' ");
 
         //Counts the number of rows returned
         $num_rows = mysqli_num_rows($e_check);
@@ -68,7 +68,7 @@ if(isset($_POST['registerButton'])){
         array_push($error_array, "Your user name must be between 2 and 25 characters<br>");
     }
 
-    $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$uname'");
+    $check_username_query = mysqli_query($con, "SELECT username FROM regUser WHERE username='$uname'");
     $num_rows = mysqli_num_rows($check_username_query);
     if($num_rows > 0){
         array_push($error_array, "Username already in use. <br>");
@@ -88,7 +88,7 @@ if(isset($_POST['registerButton'])){
 
         $profile_pic = "assets/images/profile_pics/defaults/default.png";
 
-        $query = mysqli_query($con, "INSERT INTO users VALUES('', '$fname', '$lname', '$uname', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',' ) ");
+        $query = mysqli_query($con, "INSERT INTO regUser VALUES('', '$uname', '$fname', '$lname', '$em', '$password', '', '$profile_pic') ");
 
         array_push($error_array, "<span style='color:#14C800'>You're all set! Go ahead and login!</span>");
         

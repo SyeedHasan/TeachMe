@@ -14,9 +14,9 @@
 
         <div class="userInfo">
 
-            <img class="userPic" src="<?php echo $user['profile_pic'] ?>" alt=""> 
+            <img class="userPic" src="<?php echo $user['pictureLink'] ?>" alt=""> 
             <hr>
-            <p class="name"><?php echo $user['first_name'] . " " . $user['last_name']; ?></p>
+            <p class="name"><?php echo $user['fName'] . " " . $user['lName']; ?></p>
             <hr>
 
             <div class="allInfo">

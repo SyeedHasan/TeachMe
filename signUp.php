@@ -75,7 +75,7 @@ require 'includes/form_handlers/register_handler.php';
 
 					<div class="cont-button">
 						<div class="bg">
-							<input class="loginButton" name="registerButton" type="submit" value="Proceed">
+							<input class="loginButton" name="registerButton" type="submit" value="Sign Up">
 						</div>
 					</div>
 

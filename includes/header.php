@@ -11,7 +11,7 @@ if (isset($_SESSION['username'])) {
     $firstName = $_SESSION['firstName'];
     $lastName = $_SESSION['lastName'];
 
-    $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+    $user_details_query = mysqli_query($con, "SELECT * FROM regUser WHERE username='$userLoggedIn'");
 
     $user = mysqli_fetch_array($user_details_query);
     //Has an array of all user data.
