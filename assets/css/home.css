@@ -53,6 +53,8 @@ a.nav-link i {
     display: block;
     background: black;
     height: 290px;
+    /* height:inherit; */
+    z-index: 1;
 }
 
 .form-inline {

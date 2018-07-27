@@ -1,0 +1,118 @@
+div.column {
+    width: 80%;
+    margin: 50px auto;
+    /* height:450px; */
+    padding-bottom: 50px;
+    background: #FAFAFA;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(0, 0, 0, 0.23);
+}
+
+div.column h4 {
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+div.column hr {
+    width: 80%;
+    margin: 0 auto;
+}
+
+div.column p {
+    margin: 15px;
+}
+
+div.column input[type="text"] {
+    margin-left: 15px;
+    width: 25%;
+    height: 25px;
+}
+
+div.column input[type="submit"] {
+    width: 110px;
+    height: 40px;
+    background: black;
+    margin: 15px;
+    color: white;
+    border: 0;
+    outline: 0;
+}
+
+form.column2 {
+    width: 80%;
+    margin: 50px auto;
+    /* height:450px; */
+    padding-bottom: 50px;
+    background: #FAFAFA;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(0, 0, 0, 0.23);
+}
+
+form.column2 p {
+    margin:15px;
+    font-style: italic;
+}
+
+form.column2 div.quesOpts p {
+    margin: 15px;
+    font-weight: normal;
+}
+
+.question {
+    margin: 15px;
+    font-weight: bold;
+}
+
+p label {
+    font-weight: normal;
+}
+
+div.quesOpts input[type="radio"] {
+    background: gray;
+}
+
+form.column2 hr {
+    width: 80%;
+    margin:0 auto;
+}
+
+form.column2 h4 {
+    text-align: center;
+    margin:15px;
+}
+
+form.column2 input[type="submit"] {
+    width: 110px;
+    height: 40px;
+    background: black;
+    margin: 15px 15px 0px 15px;
+    color: white;
+    border: 0;
+    outline: 0;
+}
+
+div.data h4 {
+    text-transform: none;
+}
+
+div.column h5 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+small {
+    display:block;
+    text-align: center;
+}
+
+div.data input[type="button"] {
+    display: block;
+    width: 190px;
+    height: 40px;
+    background: black;
+    margin:0 auto;
+    color: white;
+    border: 0;
+    outline: 0;
+}

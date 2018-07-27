@@ -1,0 +1,46 @@
+
+body {
+    min-width: 100%;
+}
+
+div.cover {
+    width: 100%;
+    height:250px;
+    margin-top: 0px;
+    background: gray;
+    background: url('../../assets/images/login/bg.jpg');
+    background-size: cover;
+    opacity: 0.5;
+}
+
+div.profilePic {
+    position: absolute;
+    width:150px;
+    height:150px;
+    background: black;
+    border-radius: 50%;
+    left:50%;
+    top:220px;
+    margin-left:-70px; 
+    /* Negative to center align an absolute element */
+    background: url('../../assets/images/profile_pics/defaults/default.png');
+    background-size: cover;
+}
+
+div.mainContent {
+    height: 500px;
+    width:90%;
+    overflow: hidden;
+    margin: 10px auto;
+    background:#FAFAFA;
+}
+
+h4.profileName {
+    margin-top:60px;
+    text-align: center;
+}
+
+div.mainContent hr {
+    width:80%;
+    margin:0 auto;
+}

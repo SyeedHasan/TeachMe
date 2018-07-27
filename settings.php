@@ -1,6 +1,9 @@
 <?php
     include 'includes/header.php';
-?><link rel="stylesheet" href="assets/css/settings.css">
+?>
+
+<link rel="stylesheet" href="assets/css/settings.css">
+
 <div class="mainClass">
     <ul class="contents">
     <li class="link linkBorderA"><p class="anchorTags">Account Settings</p></li>

@@ -21,22 +21,6 @@ require 'includes/form_handlers/register_handler.php';
 	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/fonts/iconic/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <script>
-    
-        // CHANGE DATA BASED ON USERS SELECTION
-        function changeOptions(selectEl) {
-            let selectedValue = selectEl.options[selectEl.selectedIndex].value;
-            let subForms = document.getElementsByClassName('className')
-            for (let i = 0; i < subForms.length; i += 1) {
-            if (selectedValue === subForms[i].name) {
-                subForms[i].setAttribute('style', 'display:block')
-            } else {
-                subForms[i].setAttribute('style', 'display:none') 
-            }
-            }
-        }
-    
-    </script>
 
 </head>
 
@@ -50,7 +34,7 @@ require 'includes/form_handlers/register_handler.php';
 						Sign up
                     </span>
 
-                      <div class="select">
+                    <div class="select">
                         <select name="slct" id="slct" onchange="changeOptions(this)">
                             <option selected> Choose an option</option>
                             <option value="1">Pure CSS</option>
@@ -58,17 +42,7 @@ require 'includes/form_handlers/register_handler.php';
                             <option value="3">Nice!</option>
                         </select>
                     </div>
-                    <form class="className" name="form_1" id="form_1" style="display:none">
-                        <input type="text" name="" id="" value="HI">
-</form> 
 
-                    <form class="className" name="form_2" id="form_2" style="display:none">
-                    <input type="text" name="" id="" value="HSKSKSSKI">
-                    </form>
-
-                    <form class="className" name="form_3" id="form_3" style="display:none">
-                    <input type="text" name="" id="" value="HSSSSSSSSSSSI">
-</form>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 
 					<!-- <div class="inputWrapper">
 						<input class="inputElement" type="email" name="signupEmail" required>
@@ -91,7 +65,7 @@ require 'includes/form_handlers/register_handler.php';
 						</a>
 					</div>
 					<!-- FIX THIS IF U WANT TO USE IT -->
-					<?php   if(in_array("<span style='color:#14C800'>You're all set! Go ahead and login!</span>", $error_array)) echo "<span class='correctSignup'>You're all set! Go ahead and login!</span>"; ?>
+					 <?php //  if(in_array("<span style='color:#14C800'>You're all set! Go ahead and login!</span>", $error_array)) echo "<span class='correctSignup'>You're all set! Go ahead and login!</span>"; ?> 
 
 				</form>
 			</div>

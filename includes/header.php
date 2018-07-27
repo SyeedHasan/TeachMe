@@ -1,7 +1,13 @@
 <?php
 
 require 'config/config.php';
+<<<<<<< HEAD
 
+=======
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
+include("includes/classes/Quiz.php");
+>>>>>>> 1b70d72d23c407e2ba1496e617d097f19c923ed2
 
 if (isset($_SESSION['username'])) {
     //If user is logged in, it contains the username
@@ -55,7 +61,8 @@ if (isset($_SESSION['username'])) {
         <div class="d-flex order-lg-1 ml-auto pr-2">
             <ul class="navbar-nav flex-row">
                 <li class="nav-item mx-2 mx-lg-0">
-                    <a class="nav-link white" href="#"><?php echo $firstName . " " . $lastName; ?></a>
+                    <!-- Edit this later to accomodate all users profiles by editing the link -->
+                    <a class="nav-link white" href="profile.php"><?php echo $firstName . " " . $lastName; ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link white" href="includes/handlers/logout.php">Log Out</a>
@@ -90,10 +97,10 @@ if (isset($_SESSION['username'])) {
                         <i class="fas fa-chevron-down"></i>More
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Y</a>
+                        <a class="dropdown-item" href="messages.php">Messages</a>
                         <a class="dropdown-item" href="settings.php">Settings</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="fas fa-list-ul"></i>To-Do</a>
+                        <a class="dropdown-item" href="quiz.php"><i class="fas fa-list-ul" style="margin-right:10px;"></i>Quiz</a>
                     </div>
                 </li>
             </ul>
