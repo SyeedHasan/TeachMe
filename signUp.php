@@ -3,8 +3,14 @@
 require 'config/config.php';
 require 'includes/form_handlers/register_handler.php';
 
-?>
+if(!isset($_GET['desg'])){
+	header("Location: home.php?err=noselect");
+}
+else {
+	$_SESSION['desg'] = $_GET['desg'];
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +81,7 @@ require 'includes/form_handlers/register_handler.php';
 
 					<div class="cont-button">
 						<div class="bg">
-							<input class="loginButton" name="registerButton" type="submit" value="Sign Up">
+							<input class="loginButton" name="registerButton" type="submit" value="Proceed">
 						</div>
 					</div>
 
