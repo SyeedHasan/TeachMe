@@ -3,8 +3,14 @@
 require 'config/config.php';
 require 'includes/form_handlers/register_handler.php';
 
-?>
+if(!isset($_GET['desg'])){
+	header("Location: home.php?err=noselect");
+}
+else {
+	$_SESSION['desg'] = $_GET['desg'];
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +34,7 @@ require 'includes/form_handlers/register_handler.php';
 	<div class="mainDiv">
 		<div class="loginContainer">
 			<div class="loginWrapper">
-				<form class="loginForm" method="POST" action="signUp.php">
+				<form class="loginForm" method="POST" action="signUp2.php?desg=something">
 					<span class="loginForm-title p-b-26">
 						Sign up
 					</span>
@@ -75,7 +81,7 @@ require 'includes/form_handlers/register_handler.php';
 
 					<div class="cont-button">
 						<div class="bg">
-							<input class="loginButton" name="registerButton" type="submit" value="Sign Up">
+							<input class="loginButton" name="regButton" type="submit" value="Proceed">
 						</div>
 					</div>
 
@@ -88,16 +94,6 @@ require 'includes/form_handlers/register_handler.php';
 							Log In
 						</a>
 					</div>
-
-					<!-- FIX THIS IF U WANT TO USE IT -->
-					 <?php 
-						// Redirect using this maybe? To the next page with the data from this page.  
-					 	 if(in_array("<span style='color:#14C800'>You're all set! Go ahead and login!</span>", $error_array)){
-							   echo "<span class='correctSignup'>You're all set! Go ahead and login!</span>"; 
-							   header("Location: index.php");
-						  }
-					 	
-						?> 
 
 				</form>
 			</div>

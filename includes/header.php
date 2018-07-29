@@ -15,6 +15,7 @@ if (isset($_SESSION['username'])) {
 
     $user = mysqli_fetch_array($user_details_query);
     //Has an array of all user data.
+    $userLoggedIn = new User($con, $user['username']);
 
 } else {
     header("Location: login.php");

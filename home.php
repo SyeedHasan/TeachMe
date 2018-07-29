@@ -48,8 +48,11 @@
         <h3 class="head">Teach More. Learn More.</h3>
         <p>Millions of teachers use Edmodo to engage students, connect with other teachers, and involve parents.</p>
         <p>Create an account on PlenTree today and join the community.</p>
-        <a href="signUp.php" class="button">I'm a teacher</a>
-        <a href="signUp.php" class="button">I'm a student</a>
+        <?php if(isset($_GET['err'])){ 
+            echo '<p style="color:red">Kindly select one of these signup options.</p>';
+        } ?>
+        <a href="signUp.php?desg=teacher" class="button">I'm a teacher</a>
+        <a href="signUp.php?desg=student" class="button">I'm a student</a>
         <img class="colorA-img" src="assets/images/bgPictures/p.png" alt="">
     </div>
 
