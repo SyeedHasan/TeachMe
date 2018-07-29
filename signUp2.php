@@ -2,6 +2,12 @@
 
 require 'config/config.php';
 require 'includes/form_handlers/register_handler.php';
+//  value="<?php echo $_REQUEST['lastName']; Way to access stuff
+
+if(!isset($_GET['desg'])){
+	header("Location: home.php?err=noselect");
+}
+
 
 ?>
 
@@ -29,34 +35,75 @@ require 'includes/form_handlers/register_handler.php';
 	<div class="mainDiv">
 		<div class="loginContainer">
 			<div class="loginWrapper">
-				<form class="loginForm" method="POST" action="signUp.php">
+				<form class="loginForm" method="POST" action="signUp2.php?desg=something">
 					<span class="loginForm-title p-b-26">
 						Sign up
                     </span>
+					<p>Kindly fill the following information to get registered</p>
+					<hr>
 
+					<input type="hidden" name="firstName" value="<?php echo $_REQUEST['firstName']; ?>" >
 
-					<!-- <div class="inputWrapper">
-						<input class="inputElement" type="email" name="signupEmail" required>
-						<span class="focus-inputElement" data-placeholder="Email"></span>
-					</div> -->
+					<input type="hidden" name="lastName" value="<?php echo $_REQUEST['lastName']; ?>" >
+
+					<input type="hidden" name="userName" value="<?php echo $_REQUEST['userName']; ?>" >
+
+					<input type="hidden" name="signupEmail" value="<?php echo $_REQUEST['signupEmail']; ?>" >
+
+					<input type="hidden" name="signupPass" value="<?php echo $_REQUEST['signupPass']; ?>" >
+
+					<input type="hidden" name="userDesg" value="<?php echo $_SESSION['desg']; ?>">
+
+					<div class="student">
+
+						<div class="inputWrapper">
+							<input class="inputElement" type="number" name="rollNo" >
+							<span class="focus-inputElement" data-placeholder="Roll Number"></span>
+						</div> 
+
+						 <div class="inputWrapper">
+							<input class="inputElement" type="number" name="batchNo" >
+							<span class="focus-inputElement" data-placeholder="Batch Number"></span>
+						</div>
+
+					</div>
+
+					<div class="teacher">
+
+						<div class="inputWrapper">
+							<input class="inputElement" type="text" name="instName" >
+							<span class="focus-inputElement" data-placeholder="Institute Name"></span>
+						</div> 
+				
+					</div>
+
+					<!-- WHAT FORM TO SELECT? BASED ON DESIGNATION -->
+					<?php
+					if(isset($_SESSION['desg'])){
+						if($_SESSION['desg'] == "teacher"){
+							echo '<style> 
+								div.student {
+									display:none;
+								}
+								</style>
+							';
+						}
+						else {
+							echo '<style> 
+								div.teacher {
+									display:none;
+								}
+								</style>
+							';
+						}
+					}
+					?>
 
 					<div class="cont-button">
-						<div class="bg">
-							<input class="loginButton" name="registerButton" type="submit" value="Sign Up">
-						</div>
+							<div class="bg">
+								<input class="loginButton" name="registerButton" type="submit" value="Sign Up">
+							</div>
 					</div>
-
-					<div class="signupText">
-						<span class="txt1">
-							Already have an account?
-						</span>
-
-						<a class="txt2" href="login.php" id="signupLink">
-							Log In
-						</a>
-					</div>
-					<!-- FIX THIS IF U WANT TO USE IT -->
-					 <?php //  if(in_array("<span style='color:#14C800'>You're all set! Go ahead and login!</span>", $error_array)) echo "<span class='correctSignup'>You're all set! Go ahead and login!</span>"; ?> 
 
 				</form>
 			</div>

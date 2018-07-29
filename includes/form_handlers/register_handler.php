@@ -33,6 +33,16 @@ if(isset($_POST['registerButton'])){
 
     $password = strip_tags($_POST['signupPass']);
 
+    $desg = $_POST['userDesg'];
+    if($desg == "teacher"){
+        $instName = $_POST['instName'];
+    }
+    else {
+        $rollNo = $_POST['rollNo'];
+        $batchNo = $_POST['batchNo'];
+    }
+    
+
     $date = date("Y-m-d");
 
     //Email Validation
@@ -90,6 +100,15 @@ if(isset($_POST['registerButton'])){
 
         $query = mysqli_query($con, "INSERT INTO regUser VALUES('', '$uname', '$fname', '$lname', '$em', '$password', '', '$profile_pic') ");
 
+        $recordID = mysqli_insert_id($con);
+
+        if($desg == "teacher"){
+            $query2 = mysqli_query($con, "INSERT INTO teacherInfo VALUES('$recordID', '$instName') ");
+        }
+        else {
+            $query2 = mysqli_query($con, "INSERT INTO studentInfo VALUES('$recordID', '$rollNo', '$batchNo') ");
+        }
+
         array_push($error_array, "<span style='color:#14C800'>You're all set! Go ahead and login!</span>");
         
         //Clear the session
@@ -98,7 +117,7 @@ if(isset($_POST['registerButton'])){
         $_SESSION['userName'] = "";
         $_SESSION['signupEmail'] = "";
 
-        // header("Location: login.php");
+        header("Location: login.php");
 
     }
 

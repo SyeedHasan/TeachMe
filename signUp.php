@@ -34,7 +34,7 @@ else {
 	<div class="mainDiv">
 		<div class="loginContainer">
 			<div class="loginWrapper">
-				<form class="loginForm" method="POST" action="signUp.php">
+				<form class="loginForm" method="POST" action="signUp2.php?desg=something">
 					<span class="loginForm-title p-b-26">
 						Sign up
 					</span>
@@ -81,7 +81,7 @@ else {
 
 					<div class="cont-button">
 						<div class="bg">
-							<input class="loginButton" name="registerButton" type="submit" value="Proceed">
+							<input class="loginButton" name="regButton" type="submit" value="Proceed">
 						</div>
 					</div>
 

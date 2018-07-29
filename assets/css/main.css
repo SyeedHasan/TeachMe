@@ -359,61 +359,15 @@ span.correctSignup {
   }
 } */
 
-/* CODE FOR SIGNUP 2 */
 
-select {
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background: #2c3e50;
-  background-image: none;
+form.loginForm p {
+  font-size:15px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom:20px;
 }
 
-.select {
-  position: relative;
-  display: block;
-  width: 20em;
-  height: 3em;
-  line-height: 3;
-  background: #2c3e50;
-  background: white;
-  overflow: hidden;
-  border-radius: .25em;
-}
-
-select {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0 0 0 .5em;
-  color: #fff;
-  cursor: pointer;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-/* ARROW */
-
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1em;
-  background: #34495e;
-  pointer-events: none;
-}
-
-/* Transition */
-
-.select:hover::after {
-  color: #f39c12;
-}
-
-.select::after {
-  transition: .25s all ease;
+form.loginForm hr {
+  width:80%;
+  margin:15px auto 25px auto;
 }
