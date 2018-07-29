@@ -10,7 +10,7 @@ class User
     public function __construct($con, $user)
     {
         $this->con = $con;
-        $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$user' ");
+        $user_details_query = mysqli_query($con, "SELECT * FROM regUser WHERE username='$user' ");
         $this->user = mysqli_fetch_array($user_details_query);
     }
 
@@ -19,43 +19,36 @@ class User
         return $this->user['username'];
     }
 
-    public function getNumPosts()
-    {
-        $username = $this->user['username'];
-        $query = mysqli_query($this->con, "SELECT num_posts FROM users WHERE username='$username' ");
-        $row = mysqli_fetch_array($query);
-        return $row['num_posts'];
-    }
-
     public function getFirstAndLastName()
     {
         $username = $this->user['username'];
-        $query = mysqli_query($this->con, "SELECT first_name, last_name FROM users WHERE username='$username'");
+        $query = mysqli_query($this->con, "SELECT fName, lName FROM regUser WHERE username='$username'");
         $row = mysqli_fetch_array($query);
-        return $row['first_name'] . " " . $row['last_name'];
+        return $row['fName'] . " " . $row['lName'];
     }
 
     public function getProfilePic()
     {
         $username = $this->user['username'];
-        $query = mysqli_query($this->con, "SELECT profile_pic FROM users WHERE username='$username'");
+        $query = mysqli_query($this->con, "SELECT pictureLink FROM regUser WHERE username='$username'");
         $row = mysqli_fetch_array($query);
-        return $row['profile_pic'];
+        return $row['pictureLink'];
     }
 
-    public function isClosed()
+    public function getUserID()
     {
         $username = $this->user['username'];
-        $query = mysqli_query($this->con, "SELECT user_closed FROM users WHERE username='$username' ");
+        $query = mysqli_query($this->con, "SELECT id FROM regUser WHERE username='$username'");
         $row = mysqli_fetch_array($query);
-
-        if ($row['user_closed'] == 'yes') {
-            return true;
-        } else {
-            return false;
-        }
-
+        return $row['id'];
     }
 
-}
+    public function getRollNumber()
+    {
+        $userid = $this->user['id'];
+        $row = mysqli_query($this->con, "SELECT rollNo from studentInfo WHERE studentID='$userid' ");
+        $row = mysqli_fetch_array($row);
+        return $row['rollNo'];
 
+    }
+}

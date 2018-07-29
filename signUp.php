@@ -95,16 +95,6 @@ else {
 						</a>
 					</div>
 
-					<!-- FIX THIS IF U WANT TO USE IT -->
-					 <?php 
-						// Redirect using this maybe? To the next page with the data from this page.  
-					 	 if(in_array("<span style='color:#14C800'>You're all set! Go ahead and login!</span>", $error_array)){
-							   echo "<span class='correctSignup'>You're all set! Go ahead and login!</span>"; 
-							   header("Location: index.php");
-						  }
-					 	
-						?> 
-
 				</form>
 			</div>
 		</div>
