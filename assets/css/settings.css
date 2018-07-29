@@ -5,9 +5,10 @@
     height: 700px;
     background-color: white;
     margin-left: 395px;
-    margin-top: -49px;
+    margin-top: 39px; /* -49px if position not fixed */
     border: 1px;
     border-style: groove;
+    margin-bottom:100px;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -38,7 +39,8 @@
     outline: 0;
     margin: 0;
 }
-.submitBtn input:hover {
+
+.submitBtn:hover {
     background: white;
     color: black;
     transition: all 1.5s;
@@ -72,7 +74,7 @@
 }
 
 .text {
-    width:80%;
+    width: 80%;
 }
 
 .formLabels {
@@ -82,27 +84,28 @@
 }
 
 div.firstName {
-    display:inline-block;
-    width:40%;
-}
-div.lastName{
-    display:inline-block;
-    width:40%;
-}
-div.email{
-    display:block;
-    width:40%;
-}
-#elabel{
-    padding-top:15px;
-}
-div.country{
-    display:inline-block;
-    width:40%;
+    display: inline-block;
+    width: 40%;
 }
 
+div.lastName {
+    display: inline-block;
+    width: 40%;
+}
 
+div.email {
+    display: block;
+    width: 40%;
+}
 
+#elabel {
+    padding-top: 15px;
+}
+
+div.country {
+    display: inline-block;
+    width: 40%;
+}
 
 
 /* CODE FOR SIDE NAV */
@@ -110,6 +113,7 @@ div.country{
 .mainClass {
     border-collapse: collapse;
     width: 299px;
+    position: fixed;
     height: 50px;
     margin-left: 90px;
     margin-top: 40px;
@@ -185,4 +189,3 @@ a.anchortags .fas {
     font-size: 13px;
     margin-top: 4px;
 }
-
