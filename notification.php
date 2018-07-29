@@ -33,6 +33,44 @@ include "includes/header.php";
 <div class="sClass">
     <p class="mainHeading">Notification Settings
     <hr>
+    <p class="sectionHeader"><b>An email notification to alishbatasleem00@gmail.com will be sent when:</b></p>
+        <p class="sectionHeader" id="content">You have an assignment due </p>
+        <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+</label>
+<hr>
+<p class="sectionHeader" id="content">You have a quiz due </p>
+        <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+</label>
+<hr>
+<p class="sectionHeader" id="content">Your assignment is graded </p>
+        <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+</label>
+<hr>
+<p class="sectionHeader" id="content">Your quiz is graded </p>
+        <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+</label>
+<hr>
+<p class="sectionHeader" id="content">There is a note to your class </p>
+        <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+</label>
+<hr>
+<p class="sectionHeader" id="content">Someone likes your note </p>
+        <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+</label>
+
+
 
 </div>
 

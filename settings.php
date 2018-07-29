@@ -322,10 +322,14 @@ include "includes/header.php";
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
-
+            
         </form>
 
         </div>
+        <form class="sectionHeader LastForm" action="#" method="POST">
+        <input class="submitBtn" type="submit" value="Save Changes">
+</form>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
