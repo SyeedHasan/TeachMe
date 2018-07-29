@@ -1,37 +1,45 @@
 /* CONTAINS CODE FOR SETTINGS */
-.sClass{
-    width:750px;
-    height:700px;
-    background-color:white;
-    margin-left:395px;
-    margin-top:-49px;
+
+.sClass {
+    width: 750px;
+    height: 700px;
+    background-color: white;
+    margin-left: 395px;
+    margin-top: -49px;
     border: 1px;
-    border-style:groove;
-    border-radius:5px;
+    border-style: groove;
+    border-radius: 5px;
     overflow: hidden;
 }
-#p
-{   padding:10px 10px 0px 10px;
-    font-size:18px;
+
+.mainHeading {
+    padding: 10px 10px 0px 10px;
+    font-size: 18px;
 }
-#a
-{
-    padding:0px 10px 0px 10px;
-    font-size:17;
+
+.urlForm {
+    padding: 10px 10px 0px 10px;
+    font-size: 18px;
 }
-#b{
-    width:25%;
-    height:30px;
-    border:none;
+
+.sectionHeader {
+    padding: 0px 10px 0px 10px;
+    font-size: 17;
+}
+
+.submitBtn {
+    width: 25%;
+    height: 30px;
+    border: none;
     border-radius: 3px;
-    font-size:90%;
+    font-size: 90%;
     color: white;
     background-color: black;
-    outline:0;
-    margin:0;
-    
+    outline: 0;
+    margin: 0;
 }
-#c{
+
+#phoneNum {
     width: 25%;
     height: 35px;
     border-radius: 3px;
@@ -39,13 +47,15 @@
     border: 1px solid #D3D3D3;
     font-size: 14px;
     padding: 5px;
-    resize:none;
+    resize: none;
 }
-#d{
-    padding:0px 10px 0px 10px;
-    font-size:15;
+
+#urlInfo {
+    padding: 0px 10px 0px 10px;
+    font-size: 15;
 }
-#e{
+
+.textField {
     width: 35%;
     height: 35px;
     border-radius: 3px;
@@ -53,13 +63,36 @@
     border: 1px solid #D3D3D3;
     font-size: 14px;
     padding: 5px;
-    resize:none;
+    resize: none;
 }
-#f{
-    font-size:14;
-    color:grey;
-    padding:0px 10px 0px 10px;
+
+.text {
+    width:80%;
 }
+
+.formLabels {
+    font-size: 14;
+    color: grey;
+    padding: 0px 10px 0px 10px;
+}
+
+div.firstName {
+    display:inline-block;
+    width:40%;
+}
+div.lastName{
+    display:inline-block;
+    width:40%;
+}
+
+
+
+
+
+
+
+/* CODE FOR SIDE NAV */
+
 .mainClass {
     border-collapse: collapse;
     width: 299px;
@@ -67,8 +100,6 @@
     margin-left: 90px;
     margin-top: 40px;
 }
-
-
 
 .anchortags {
     padding-left: 10px;
@@ -140,3 +171,4 @@ a.anchortags .fas {
     font-size: 13px;
     margin-top: 4px;
 }
+
