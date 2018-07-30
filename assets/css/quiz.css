@@ -210,10 +210,13 @@ i.fa-plus-circle {
     float: right;
     margin-right: 10px;
 }
+<<<<<<< HEAD
 
 .fa-plus-circle:hover {
+=======
+>>>>>>> 74bc2981505e446ee41f672f865b48ee245dbc44
     background: white;
-    color: black;
+    color:red;
     transition: all 1.5s;
 }
 
