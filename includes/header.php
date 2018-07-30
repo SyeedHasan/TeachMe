@@ -78,7 +78,7 @@ if (isset($_SESSION['username'])) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="createClass.php">
                         <i class="fas fa-graduation-cap"></i>Classes</a>
                 </li>
                 <li class="nav-item">

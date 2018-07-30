@@ -50,7 +50,7 @@ form.column2 {
 }
 
 form.column2 p {
-    margin:15px;
+    margin: 15px;
     font-style: italic;
 }
 
@@ -74,12 +74,12 @@ div.quesOpts input[type="radio"] {
 
 form.column2 hr {
     width: 80%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 form.column2 h4 {
     text-align: center;
-    margin:15px;
+    margin: 15px;
 }
 
 form.column2 input[type="submit"] {
@@ -102,7 +102,7 @@ div.column h5 {
 }
 
 small {
-    display:block;
+    display: block;
     text-align: center;
 }
 
@@ -111,13 +111,11 @@ div.data input[type="button"] {
     width: 190px;
     height: 40px;
     background: black;
-    margin:0 auto;
+    margin: 0 auto;
     color: white;
     border: 0;
     outline: 0;
 }
-
-
 
 /* CODE FOR CREATE QUIZ */
 
@@ -155,7 +153,7 @@ submitBtn:hover {
 }
 
 form.createForm input[type="text"] {
-    width:70%;
+    width: 70%;
 }
 
 .formLabels {
@@ -163,52 +161,73 @@ form.createForm input[type="text"] {
     color: black;
     margin-bottom: 1px;
 }
+
 div.qTime {
     display: inline-block;
     width: 40%;
 }
+
 div.qName {
     display: inline-block;
     width: 40%;
+    margin-left:20px;
 }
+
 div.questionDiv {
-    height:300px;
+    height: 300px;
     border-radius: 5px;
-    width:95%;
-    background-color:#EEF2F6;
+    width: 95%;
+    background-color: #EEF2F6;
     margin-left: 25px;
-    margin-top:20px;
+    margin-top: 20px;
 }
-.quizlabels{
+
+.quizlabels {
     font-size: 14;
     color: black;
     margin-bottom: 1px;
 }
-.quizOptions{
+
+.quizOptions {
     font-size: 14;
     color: black;
     margin-bottom: 1px;
 }
-div.quizOpt{
+
+
+div.quizOpt {
     display: inline-block;
     width: 24%;
 }
-div.quest{
-    display:block;
+
+div.quest {
+    display: block;
     width: 40%;
 }
-i.fa-plus-circle{
-    font-size:30;
-    float:right;
-    margin-right:10px;
+
+i.fa-plus-circle {
+    font-size: 30;
+    float: right;
+    margin-right: 10px;
 }
-fa-plus-circle:hover{
+
+.fa-plus-circle:hover {
     background: white;
     color: black;
     transition: all 1.5s;
 }
-#submitQuest{
-    float:right;
-    margin-left:20px;
+
+#submitQuest {
+    float: right;
+    margin-left: 20px;
 }
 
+form.createForm input[type="submit"]{
+    width: 150px;
+    height: 40px;
+    background: black;
+    margin: 15px;
+    color: white;
+    border: 0;
+    outline: 0;
+}

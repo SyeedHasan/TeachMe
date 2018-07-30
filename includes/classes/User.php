@@ -49,6 +49,22 @@ class User
         $row = mysqli_query($this->con, "SELECT rollNo from studentInfo WHERE studentID='$userid' ");
         $row = mysqli_fetch_array($row);
         return $row['rollNo'];
-
     }
+
+    public function returnDesignation()
+    {
+        // Get the ID of the user -> Search in DB -> Return the name of the table
+        $userid = $this->user['id'];
+
+        $teacherQuery = mysqli_query($this->con, "SELECT teahcerID FROM teacherInfo where ID='$userid' ");
+
+        if($teacherQuery){
+            //TEACHER!
+        }
+        else {
+            //STUDENT!
+        }
+    
+    }
+
 }

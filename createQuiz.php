@@ -9,7 +9,7 @@
     <h4>Create a Quiz</h4>
     <hr>
 
-    <p>Fill the following fields:</p>
+    <p style="margin-left:40px">Fill the following fields:</p>
     
     <form action="createQuiz.php" class="createForm" method="post">
         <div class="qName"><p class="formLabels">Quiz Name</p>
