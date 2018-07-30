@@ -55,15 +55,21 @@ class User
     {
         // Get the ID of the user -> Search in DB -> Return the name of the table
         $userid = $this->user['id'];
+        $str = "";
+        $teacherQuery = mysqli_query($this->con, "SELECT teacherID FROM teacherInfo where teacherID='$userid' ");
 
-        $teacherQuery = mysqli_query($this->con, "SELECT teahcerID FROM teacherInfo where ID='$userid' ");
+        $teacherQuery = mysqli_fetch_array($teacherQuery);
+
+        $teacherQuery = $teacherQuery['teacherID'];
 
         if($teacherQuery){
-            //TEACHER!
+            $str = "Teacher";
         }
         else {
-            //STUDENT!
+            $str = "Student";
         }
+
+        return $str;
     
     }
 

@@ -1,6 +1,10 @@
 <?php
     include "includes/header.php";
     include "includes/form_handlers/class_handler.php";
+
+    if($userLoggedIn->returnDesignation() == "Student"){
+        header("Location: index.php");
+    }
 ?>
 
 <link rel="stylesheet" href="assets/css/class.css">

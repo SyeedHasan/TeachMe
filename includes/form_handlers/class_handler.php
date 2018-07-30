@@ -16,7 +16,8 @@ if(isset($_POST['createClass'])){
 
     $classroomID = $classID['classroomID'];
 
-    $teacherQuery = mysqli_query($con, "INSERT INTO teacherClassroom VALUES('$classroomID', '$teacherID') ");
+    // FIX THIS QUERY!
+    $teacherQuery = mysqli_query($con, "INSERT INTO teacherClassroom VALUES((SELECT teacherID from teacherInfo WHERE teacherID='$teacherID'), (SELECT classroomID FROM classrooms WHERE classroomid='$classroomID'))");
 
 }
 
@@ -27,21 +28,24 @@ if(isset($_POST['joinClass'])){
     $studentID = $user['id'];
     $str = "";
 
-    $checkClass = mysqli_query($con, "SELECT * FROM classrooms WHERE classroomid='$classID'");
+    $checkClass = mysqli_query($con, "SELECT classroomID FROM classrooms WHERE classroomid='$classID'");
+    if(mysqli_num_rows($checkClass) == 0){
+    //     echo "HI!";
+    // }
 
-    if(!$checkClass){
+    // if($checkClass){
         //No such class found. Return an error.
-        $str = "<span style='color:red; text-align:center; margin: 10px 0; display:block; font-size:22px; text-transform:uppercase;'>No such class exists!</span>";
+        $str = "<p style='color:red; text-align:center; margin: 10px 0; display:block; font-size:22px; text-transform:uppercase;'>No such class exists!</p>";
         echo $str;        
     }
 
     //Insert student in class
-    // $studentQuery = mysqli_query($con, "INSERT INTO classstudents VALUES('$studentID', (SELECT classroomID FROM classrooms WHERE classroomid='$classID'))");
+    $studentQuery = mysqli_query($con, "INSERT INTO classstudents VALUES((SELECT studentID from studentInfo WHERE studentId='$studentID'), (SELECT classroomID FROM classrooms WHERE classroomid='$classID'))");
 
-    // if($studentQuery){
-    //     $str = "<span style='color:green; text-align:center; margin: 10px 0; display:block; font-size:22px; text-transform:uppercase;'>No such class exists!</span>";
-    //     echo $str;        
-    // }
+    if($studentQuery){
+        $str = "<span style='color:green; text-align:center; margin: 10px 0; display:block; font-size:22px; text-transform:uppercase;'>Inserted all data! You're now in a class!</span>";
+        echo $str;        
+    }
 
 
     // echo "THIS OESNT!";

@@ -13,7 +13,7 @@
         <div class="qName">
             <p class="formLabels">Enter class code:</p>
 
-        <input class="textField text" type="text" name="classID" id="classID" required>
+        <input class="textField text" type="number" name="classID" id="classID" required>
 
         <input class="submitBtn" type="submit" name="joinClass" value="Join Class">
 </div>

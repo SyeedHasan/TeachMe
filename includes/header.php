@@ -17,6 +17,8 @@ if (isset($_SESSION['username'])) {
     //Has an array of all user data.
     $userLoggedIn = new User($con, $user['username']);
 
+    $designation = $userLoggedIn->returnDesignation();
+
 } else {
     header("Location: login.php");
 }
@@ -78,8 +80,17 @@ if (isset($_SESSION['username'])) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="createClass.php">
-                        <i class="fas fa-graduation-cap"></i>Classes</a>
+                    <a class="nav-link" href="
+                    <?php
+                    if($designation == "Teacher"){ 
+                        echo "createClass.php";
+                    } 
+                    else {
+                        echo "joinClass.php";
+                    }
+                     
+                    ?>">
+                    <i class="fas fa-graduation-cap"></i>Classes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="assignments.php">
