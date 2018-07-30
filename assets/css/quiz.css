@@ -217,7 +217,7 @@ i.fa-plus-circle {
 }
 
 .fa-plus-circle:hover {
-    background: white;
+    background:#EEF2F6;
     color: #17a2b8;
     transition: all 1.5s;
 }
