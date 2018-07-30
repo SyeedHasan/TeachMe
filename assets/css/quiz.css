@@ -170,7 +170,7 @@ div.qTime {
 div.qName {
     display: inline-block;
     width: 40%;
-    margin-left:20px;
+    margin-left: 20px;
 }
 
 div.questionDiv {
@@ -194,7 +194,6 @@ div.questionDiv {
     margin-bottom: 1px;
 }
 
-
 div.quizOpt {
     display: inline-block;
     width: 24%;
@@ -210,13 +209,10 @@ i.fa-plus-circle {
     float: right;
     margin-right: 10px;
 }
-<<<<<<< HEAD
 
 .fa-plus-circle:hover {
-=======
->>>>>>> 74bc2981505e446ee41f672f865b48ee245dbc44
     background: white;
-    color:red;
+    color: #17a2b8;
     transition: all 1.5s;
 }
 
@@ -225,7 +221,7 @@ i.fa-plus-circle {
     margin-left: 20px;
 }
 
-form.createForm input[type="submit"]{
+form.createForm input[type="submit"] {
     width: 150px;
     height: 40px;
     background: black;
