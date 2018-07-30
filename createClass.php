@@ -1,14 +1,16 @@
 <?php
     include "includes/header.php";
 ?>
+    <link rel="stylesheet" href="assets/css/class.css">
+<div class="column">
 
-<div>
-
-    <h1>Create a Class</h1>
-    <form action="createClass.php" method="POST"></form>
-        <p>Enter a name</p>
-        <input type="text" name="className" id="className" required>
-        <input type="submit" name="createClass" value="Create Class">
+    <h4>Create a Classroom</h4>
+    <hr>
+    <form action="createClass.php" method="POST">
+    <div class="qName"><p class="formLabels">Enter a name</p>
+            <input class="textField text" type="text" name="qName">
+            <input id="submitForm" class="submitBtn" type="submit" value="Create">
+        </div>
     </form>
 
 </div>

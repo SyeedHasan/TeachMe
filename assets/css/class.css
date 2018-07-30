@@ -1,0 +1,68 @@
+div.column {
+    width: 80%;
+    margin: 50px auto;
+    /* height:450px; */
+    padding-bottom: 50px;
+    background: #FAFAFA;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(0, 0, 0, 0.23);
+    border-radius:5px;
+}
+div.column h4 {
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+div.column hr {
+    width: 80%;
+    margin: 0 auto;
+}
+div.qName {
+    display: block;
+    width: 40%;
+    margin:0 auto;
+    margin-top:50px;
+}
+.formLabels {
+    font-size: 14;
+    color: black;
+    margin-bottom: 1px;
+}
+.textField {
+    width: 100%;
+    height: 35px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    border: 1px solid grey;
+    font-size: 14px;
+    padding: 5px;
+    resize: none;
+}
+
+.text {
+    width: 80%;
+}
+.submitBtn {
+    width: 27%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 90%;
+    color: white;
+    background-color: black;
+    outline: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.submitBtn:hover {
+    background: white;
+    color: black;
+    transition: all 1.5s;
+}
+
+#submitForm:hover {
+    background: white;
+    color: black;
+    transition: all 1.5s;
+}
