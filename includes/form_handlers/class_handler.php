@@ -36,13 +36,15 @@ if(isset($_POST['joinClass'])){
     }
 
     //Insert student in class
-    $studentQuery = mysqli_query($con, "INSERT INTO classStudents VALUES('$studentID', '$classID')");
+    // $studentQuery = mysqli_query($con, "INSERT INTO classstudents VALUES('$studentID', (SELECT classroomID FROM classrooms WHERE classroomid='$classID'))");
 
-    if($studentQuery){
-        $str = "<span style='color:green; text-align:center; margin: 10px 0; display:block; font-size:22px; text-transform:uppercase;'>No such class exists!</span>";
-        echo $str;        
-    }
+    // if($studentQuery){
+    //     $str = "<span style='color:green; text-align:center; margin: 10px 0; display:block; font-size:22px; text-transform:uppercase;'>No such class exists!</span>";
+    //     echo $str;        
+    // }
 
+
+    // echo "THIS OESNT!";
 
 
 
