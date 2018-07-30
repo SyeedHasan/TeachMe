@@ -59,19 +59,19 @@ include "includes/header.php";
 
         <form class="sectionHeader lastForm" action="#" method="POST">
             <div class="firstName">
-                <p class="formLabels">First Name:</p>
-                <input class="textField text" type="text" name="fname">
+                <p class="formLabels">First Name</p>
+                <input class="textField text" type="text" name="fname" value="<?php echo $user['fName']; ?>">
             </div>
             <div class="lastName">
-                <p class="formLabels">Last Name:</p>
-                <input class="textField text" type="text" name="lname">
+                <p class="formLabels">Last Name</p>
+                <input class="textField text" type="text" name="lname" value="<?php echo $user['lName']; ?>">
             </div>
             <div class="email">
-                <p id="elabel" class="formLabels">Primary Email:</p>
-                <input class="textField text" type="email" name="email">
+                <p id="elabel" class="formLabels">Primary Email</p>
+                <input class="textField text" type="email" name="email" value="<?php echo $user['email']; ?>">
             </div>
             <div class="country">
-                <p id="elabel" class="formLabels">Country:</p>
+                <p id="elabel" class="formLabels">Country</p>
                 <select class="textField text" name="country">
                     <option value="">[Select]</option>
                     <option value="Afganistan">Afghanistan</option>
@@ -322,21 +322,13 @@ include "includes/header.php";
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
-            
+            </div>
+            <br>
+                <input class="submitBtn" type="submit" value="Save Changes">
         </form>
 
-        </div>
-        <form class="sectionHeader LastForm" action="#" method="POST">
-        <input class="submitBtn" type="submit" value="Save Changes">
-</form>
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+<?php
+include 'includes/footer.php';
+?>

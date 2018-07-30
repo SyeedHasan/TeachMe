@@ -1,7 +1,6 @@
 <?php
-
-include "includes/header.php";
-
+    include "includes/header.php";
+    include "includes/form_handlers/password_handler.php";
 ?>
 
 
@@ -36,23 +35,26 @@ include "includes/header.php";
     <p class="mainHeading">Password Settings
     <hr>
 <form class="sectionHeader" action="#" method="POST">
+    
     <p class="formLabels">Current Password </p>
-    <input class="textField text" type="password" name="cpassword">
+    <input class="textField text" type="password" name="cpassword" required>
+    <span class="oldPwErr"></span>
+    
     <br>
+    
     <p class="formLabels">New Password </p>
-    <input class="textField text" type="password" name="npassword">
+    <input class="textField text" type="password" name="npassword" required>
+    <span class="newPwErr"></span>
+
     <p class="formLabels">Confirm Password </p>
-    <input class="textField text" type="password" name="password">
-    <input class="submitBtn" type="submit" value="Change Password">
+    <input class="textField text" type="password" name="npassword2" required>
+    <span class="newPwErr"></span>
+
+
+    <input class="submitBtn" name="changePassword" type="submit" value="Change Password">
 </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+<?php
+include 'includes/footer.php';
+?>

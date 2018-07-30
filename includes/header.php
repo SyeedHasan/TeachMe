@@ -30,13 +30,12 @@ if (isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/icons/favicons/icons.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="includes/images/icons/favicons/icons.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/home.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">   
+     <link rel="stylesheet" href="assets/css/home.css">
 
 </head>
 
