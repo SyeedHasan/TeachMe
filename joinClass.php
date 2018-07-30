@@ -4,15 +4,19 @@
 ?>
 
 <div>
+<link rel="stylesheet" href="assets/css/class.css">
+<div class="column">
+    <h4>Join a Class</h4>
+    <hr>
 
-    <h1>Join a Class</h1>
     <form action="joinClass.php" method="POST">
-        <p>Enter the class ID: </p>
+        <div class="qName">
+            <p class="formLabels">Enter class code:</p>
 
-        <input type="text" name="classID" id="classID" required>
+        <input class="textField text" type="text" name="classID" id="classID" required>
 
-        <input type="submit" name="joinClass" value="Join Class">
-
+        <input class="submitBtn" type="submit" name="joinClass" value="Join Class">
+</div>
     </form>
 
 </div>
