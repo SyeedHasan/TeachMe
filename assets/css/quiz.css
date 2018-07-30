@@ -202,9 +202,9 @@ i.fa-plus-circle{
     float:right;
     margin-right:10px;
 }
-fa-plus-circle:hover{
+.fa-plus-circle:hover{
     background: white;
-    color: black;
+    color:red;
     transition: all 1.5s;
 }
 #submitQuest{
