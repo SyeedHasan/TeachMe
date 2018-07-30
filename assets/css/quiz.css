@@ -131,7 +131,13 @@ div.data input[type="button"] {
     margin: 0;
 }
 
-submitBtn:hover {
+.submitBtn:hover {
+    background: white;
+    color: black;
+    transition: all 1.5s;
+}
+
+#submitQuest:hover {
     background: white;
     color: black;
     transition: all 1.5s;
