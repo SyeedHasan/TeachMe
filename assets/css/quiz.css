@@ -133,7 +133,7 @@ div.data input[type="button"] {
     margin: 0;
 }
 
-.submitBtn:hover {
+submitBtn:hover {
     background: white;
     color: black;
     transition: all 1.5s;
@@ -170,5 +170,45 @@ div.qTime {
 div.qName {
     display: inline-block;
     width: 40%;
+}
+div.questionDiv {
+    height:300px;
+    border-radius: 5px;
+    width:95%;
+    background-color:#EEF2F6;
+    margin-left: 25px;
+    margin-top:20px;
+}
+.quizlabels{
+    font-size: 14;
+    color: black;
+    margin-bottom: 1px;
+}
+.quizOptions{
+    font-size: 14;
+    color: black;
+    margin-bottom: 1px;
+}
+div.quizOpt{
+    display: inline-block;
+    width: 24%;
+}
+div.quest{
+    display:block;
+    width: 40%;
+}
+i.fa-plus-circle{
+    font-size:30;
+    float:right;
+    margin-right:10px;
+}
+fa-plus-circle:hover{
+    background: white;
+    color: black;
+    transition: all 1.5s;
+}
+#submitQuest{
+    float:right;
+    margin-left:20px;
 }
 
