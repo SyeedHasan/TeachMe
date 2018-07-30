@@ -41,5 +41,5 @@
 
 <script src="assets/js/assignments.js"></script>
 <?php
-include 'includes/footer.php';
+    include 'includes/footer.php';
 ?>
