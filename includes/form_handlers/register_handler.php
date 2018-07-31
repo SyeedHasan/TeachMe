@@ -28,7 +28,6 @@ if(isset($_POST['registerButton'])){
 
     $em = strip_tags($_POST['signupEmail']);
     $em = str_replace(' ', '', $em);     //Replace spaces by blanks
-    $em = ucfirst(strtolower($em));
     $_SESSION['signupEmail'] = $em;
 
     $password = strip_tags($_POST['signupPass']);
@@ -48,7 +47,7 @@ if(isset($_POST['registerButton'])){
     //Email Validation
     if(filter_var($em, FILTER_VALIDATE_EMAIL)){
         //Give filtered version of email to 'em'
-        $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+        $em= filter_var($em, FILTER_VALIDATE_EMAIL);
         
         //Check if email exists in the table
         $e_check = mysqli_query($con, "SELECT email FROM regUser WHERE email='$em' ");
