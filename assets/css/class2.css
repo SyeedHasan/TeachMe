@@ -37,69 +37,6 @@
 }
 
 #style-11::-webkit-scrollbar-track {
-<<<<<<< HEAD
-    border-radius: 10px;
-    /*background: rgba(0,0,0,0.1);*/
-    background:white;
-    /*border: 1px solid #ccc;*/
-  }
-  
-  #style-11::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background:  black;
-    border: 1px solid black;
-  }
-  
-  #style-11::-webkit-scrollbar-thumb:hover {
-    border: 1px solid #17a2b8;
-    background:#17a2b8;
-    transition: all 3s; }
-  
-  #style-11::-webkit-scrollbar-thumb:active {
-    background: linear-gradient(left, #22ADD4, #1E98BA);
-  }
-
-/*For Post Area*/
-  div.postArea {
-    width: 600px;
-    background: white;   
-    height: 100%;    
-    border-radius:5px;
-    position: absolute;
-    top: 110px;
-    left: 350px;
-}
-.post_form {
-    width: 90%;
-}
-div.logos {
-    display: inline-block;
-    width:250px;
-    margin: 14px 50px;
-    text-align: center;
-}
-
-div.logos i {
-    padding:10px 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius:5px;
-}
-
-div.logos i:hover {
-    background: white;
-    transition: all 1.5s;
-}
-div.main_column {
-    padding-top: 20px;
-    background: #EEE;
-    border: 1px solid whitesmoke;
-    height: 170px;
-    margin: 10px;
-    border-radius: 5px;
-}
-
-=======
   border-radius: 10px;
   /*background: rgba(0,0,0,0.1);*/
   background: white;
@@ -121,4 +58,44 @@ div.main_column {
 #style-11::-webkit-scrollbar-thumb:active {
   background: linear-gradient(left, #22ADD4, #1E98BA);
 }
->>>>>>> f5433142711e7f13c8613285bf62482d44de06cb
+
+/* CODE FOR FORM BUTTONS */
+
+.post_form input[type="submit"] {
+  width: 10%;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  display: block;
+  color: white;
+  font-size: 90%;
+  position: absolute;
+  outline: 0;
+  margin: 0;
+}
+
+.post_form input[type="reset"] {
+  width: 10%;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  display: block;
+  color: white;
+  font-size: 90%;
+  position: absolute;
+  outline: 0;
+  margin: 0;
+}
+
+
+#cancel_button {
+  right: 400px;
+  top:250px;
+}
+
+#post_button {
+  right:250px;
+  top:250px;
+}
