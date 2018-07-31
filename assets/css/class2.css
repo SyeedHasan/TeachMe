@@ -54,3 +54,44 @@
   #style-11::-webkit-scrollbar-thumb:active {
     background: linear-gradient(left, #22ADD4, #1E98BA);
   }
+
+/*For Post Area*/
+  div.postArea {
+    width: 600px;
+    background: white;   
+    height: 100%;    
+    border-radius:5px;
+    position: absolute;
+    top: 110px;
+    left: 350px;
+}
+.post_form {
+    width: 90%;
+}
+div.logos {
+    display: inline-block;
+    width:250px;
+    margin: 14px 50px;
+    text-align: center;
+}
+
+div.logos i {
+    padding:10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius:5px;
+}
+
+div.logos i:hover {
+    background: white;
+    transition: all 1.5s;
+}
+div.main_column {
+    padding-top: 20px;
+    background: #EEE;
+    border: 1px solid whitesmoke;
+    height: 170px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
