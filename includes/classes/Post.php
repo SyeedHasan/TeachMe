@@ -8,64 +8,27 @@ class Post {
 		$this->user_obj = new User($con, $user);
 	}
 
-	public function submitPost($body, $user_to) {
-		$date_added = date("Y-m-d H:i:s");
-		$query = mysqli_query($this->con, "INSERT INTO posts VALUES('', 'sda', 'asdfsd', 'asdfsdaf', '$date_added', 'no', 'no', '0')");
-		$body = strip_tags($body); //removes html tags 
+	public function submitPost($selectedClass, $body, $userId) {
+
+		// $query = mysqli_query($this->con, "INSERT INTO posts VALUES('', 'sda', 'asdfsd', 'asdfsdaf', '$date_added', 'no', 'no', '0')");
+		
+		$body = strip_tags($body);
 		$body = mysqli_real_escape_string($this->con, $body);
-		$check_empty = preg_replace('/\s+/', '', $body); //Deltes all spaces 
-      
-		if($check_empty != "") {
 
-			//Split by spaces
-			$body_array = preg_split("/\s+/", $body);
+		//Current date and time
+		$date_added = date("Y-m-d H:i:s");
+		//Get username
+		$added_by = $this->user_obj->getUsername();
 
-			//key is number, value is data
-			foreach($body_array as $key => $value){ 
-				if(strpos($value, "www.youtube.com/watch?v=") !== false) {
+		//insert post 
+		$insertPort = mysqli_query($this->con, "INSERT INTO post VALUES('','$date_added','$body')");
+		$returned_id = mysqli_insert_id($this->con);
 
-					//Split at ampersand for playlisted links into 3 so use first
-					$link = preg_split("!&!", $value);
+		$relatePost = mysqli_query($this->con, "INSERT INTO postuser VALUES('$returned_id', '$userId', '$selectedClass' ");
 
-					//backward slash is to use question mark
-					$value = preg_replace("!watch\?v=!", "embed/" , $link[0]);
-					$value = "<br><iframe width=\'420\' height=\'315\' src=\'" . $value ."\'></iframe><br>";
-					$body_array[$key] = $value;
-				}
-			}
-
-			$body = implode(" ", $body_array);
-
-
-			//Current date and time
-			$date_added = date("Y-m-d H:i:s");
-			//Get username
-			$added_by = $this->user_obj->getUsername();
-
-			//If user is on own profile, user_to is 'none'
-			if($user_to == $added_by) {
-				$user_to = "none";
-			}
-
-			//insert post 
-			$query = mysqli_query($this->con, "INSERT INTO posts VALUES('', '$body', '$added_by', '$user_to', '$date_added', 'no', 'no', '0')");
-			$returned_id = mysqli_insert_id($this->con); //id of last post 
-
-			//Insert notification 
-			//129
-			if($user_to != 'none') {
-				$notification = new Notification($this->con, $added_by);
-				$notification->insertNotification($returned_id, $user_to, "profile_post");
-			}
-
-
-			//Update post count for user 
-			$num_posts = $this->user_obj->getNumPosts();
-			$num_posts++;
-			$update_query = mysqli_query($this->con, "UPDATE users SET num_posts='$num_posts' WHERE username='$added_by'");
 
 		}
-	}
+	
 
 	public function loadPostsFriends($data, $limit) {
 

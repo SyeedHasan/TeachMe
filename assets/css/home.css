@@ -175,6 +175,22 @@ textarea:focus {
     margin: 0;
 }
 
+.post_form input[type="reset"] {
+    width: 15%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: black;
+    display: block;
+    color: white;
+    font-size: 90%;
+    position: absolute;
+    outline: 0;
+    right:35px;
+    top:115px;
+    margin: 0;
+}
+
 #cancel_button {
     right: 135px;
 }
