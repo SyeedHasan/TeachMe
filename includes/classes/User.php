@@ -73,4 +73,41 @@ class User
     
     }
 
+    public function returnJoinedClasses()
+    {
+        $userID = $this->user['id'];
+        $desg = $this->returnDesignation();
+
+        //Get the classes the user has joined, else return none as an option.
+        if($desg == "Student"){
+            $checkDb = mysqli_query($this->con, "SELECT classroomID FROM classStudents WHERE studentID='$userID' ");
+        }
+        else {
+            $checkDb = mysqli_query($this->con, "SELECT classroomID FROM teacherClassroom WHERE teacherID='$userID' ");
+        }
+
+        if(mysqli_num_rows($checkDb) != 0){
+
+            while($row = mysqli_fetch_array($checkDb)){
+                $classID = $row['classroomID'];
+
+                $className = mysqli_query($this->con, "SELECT className FROM classrooms WHERE classroomID='$classID'");
+                $className = mysqli_fetch_array($className);
+                $className = $className['className'];
+
+                $str = "<option value='".$classID."'>". $classID ." - ". $className ."</option>";
+                
+                echo $str;
+
+            }
+
+        }
+        else {
+            //No classes found!
+            $str = "<option>No classes found!</option>";
+            echo $str;
+        }
+    
+    }
+
 }

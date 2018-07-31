@@ -1,5 +1,6 @@
 <?php
-  include 'includes/header.php';
+    include 'includes/header.php';
+
 ?>
 
     <style>
@@ -36,7 +37,11 @@
             <div class="main_column column">
                 <form class="post_form" action="index.php" method="POST">
                     <textarea name="post_text" id="post_text" placeholder="Something to say"></textarea>
-                    
+                    <select name="selectClass" id="selectClass">
+                        <!-- Returns options containing all classes -->
+                        <?php $userLoggedIn->returnJoinedClasses(); ?> 
+                    </select>
+                    <br>
                     <div class="logos">
                         <i class="far fa-sticky-note"></i>
                         <i class="fas fa-link"></i>
@@ -44,10 +49,26 @@
                         <i class="fab fa-google-drive"></i>
                     </div>
                     
-                    <input type="submit" name="post" id="post_button" value="Post">       
-                    <input type="submit" name="post" id="cancel_button" value="Cancel">       
+                    <input type="submit" name="submitPost" id="post_button" value="Post">       
+                    <input type="reset" name="resetPost" id="cancel_button" value="Cancel">       
                 
                 </form>
+
+
+                <?php 
+
+                    //SUBMIT A POST
+                    if(isset($_POST['submitPost'])){
+                        $selectedClass = $_POST['selectClass'];
+                        $body = $_POST['post_text'];
+                        $userId = $user['id'];
+                
+                        $post = new Post($con, $user['username']);
+                        $post->submitPost($selectedClass, $body, $userId);
+                
+                    }            
+
+                ?>
 
                  <div class="posts_area" >
                     <hr>
