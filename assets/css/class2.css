@@ -99,3 +99,9 @@
   right:250px;
   top:250px;
 }
+
+.post_form input:hover {
+  background: white;
+  color: black;
+  transition: all 1.5s;
+}

@@ -88,7 +88,6 @@
             <hr>
             <p class="head">Classes</p>
             <p>Join a class? Enter the invite code here.</p>
-            <input type="text" name="classCode" id="classCode">
             <input type="submit" name="post" id="joinClass" value="Join Class">       
 
         </div>
