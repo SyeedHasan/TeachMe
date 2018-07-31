@@ -1,17 +1,5 @@
 <?php
     include 'includes/header.php';
-    
-    if(isset($_POST['submitPost'])){
-        $selectedClass = $_POST['selectClass'];
-        $body = $_POST['post_text'];
-        $userId = $user['id'];
-
-        // $post = new Post($con, $userLoggedIn);
-        // $post->submitPost($selectedClass, $body, $userId);
-        echo $selectedClass;
-
-    }
-
 
 ?>
 
@@ -65,6 +53,22 @@
                     <input type="reset" name="resetPost" id="cancel_button" value="Cancel">       
                 
                 </form>
+
+
+                <?php 
+
+                    //SUBMIT A POST
+                    if(isset($_POST['submitPost'])){
+                        $selectedClass = $_POST['selectClass'];
+                        $body = $_POST['post_text'];
+                        $userId = $user['id'];
+                
+                        $post = new Post($con, $user['username']);
+                        $post->submitPost($selectedClass, $body, $userId);
+                
+                    }            
+
+                ?>
 
                  <div class="posts_area" >
                     <hr>

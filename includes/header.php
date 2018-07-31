@@ -7,11 +7,11 @@ include("includes/classes/Quiz.php");
 
 if (isset($_SESSION['username'])) {
     //If user is logged in, it contains the username
-    $userLoggedIn = $_SESSION['username'];
+    $loggedUser = $_SESSION['username'];
     $firstName = $_SESSION['firstName'];
     $lastName = $_SESSION['lastName'];
 
-    $user_details_query = mysqli_query($con, "SELECT * FROM regUser WHERE username='$userLoggedIn'");
+    $user_details_query = mysqli_query($con, "SELECT * FROM regUser WHERE username='$loggedUser'");
 
     $user = mysqli_fetch_array($user_details_query);
     //Has an array of all user data.

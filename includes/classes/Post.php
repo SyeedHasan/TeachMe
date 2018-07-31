@@ -10,8 +10,6 @@ class Post {
 
 	public function submitPost($selectedClass, $body, $userId) {
 
-		// $query = mysqli_query($this->con, "INSERT INTO posts VALUES('', 'sda', 'asdfsd', 'asdfsdaf', '$date_added', 'no', 'no', '0')");
-		
 		$body = strip_tags($body);
 		$body = mysqli_real_escape_string($this->con, $body);
 
@@ -24,8 +22,11 @@ class Post {
 		$insertPort = mysqli_query($this->con, "INSERT INTO post VALUES('','$date_added','$body')");
 		$returned_id = mysqli_insert_id($this->con);
 
-		$relatePost = mysqli_query($this->con, "INSERT INTO postuser VALUES('$returned_id', '$userId', '$selectedClass' ");
-
+		$relatePost = mysqli_query($this->con, "INSERT INTO postuser VALUES('$returned_id', '$userId', '$selectedClass') ");
+		
+		if($relatePost){
+			echo "<p class='success' style='color:green; text-transform:capitalize;'>Posted!</p>";
+		}
 
 		}
 	

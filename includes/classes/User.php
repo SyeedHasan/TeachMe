@@ -95,7 +95,7 @@ class User
                 $className = mysqli_fetch_array($className);
                 $className = $className['className'];
 
-                $str = "<option name='".$classID."'>". $classID ." - ". $className ."</option>";
+                $str = "<option value='".$classID."'>". $classID ." - ". $className ."</option>";
                 
                 echo $str;
 
