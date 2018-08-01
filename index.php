@@ -1,6 +1,15 @@
 <?php
     include 'includes/header.php';
 
+    if(isset($_POST['classOption'])){
+        if($userLoggedIn->returnDesignation() == "Student"){
+            header("Location: joinClass.php");
+        }
+        else {
+            header("Location: createClass.php");
+        }
+    }
+
 ?>
 
     <style>
@@ -87,8 +96,27 @@
             <p>You have ___ assignments to turn in this week! </p>
             <hr>
             <p class="head">Classes</p>
-            <p>Join a class? Enter the invite code here.</p>
-            <input type="submit" name="post" id="joinClass" value="Join Class">       
+            
+            <p><?php 
+                if($userLoggedIn->returnDesignation() == "Student"){
+                   echo "Join a class? Enter the invite code here.";
+                }
+                else {
+                    echo "Create a class for your students to join.";
+                }
+                ?>
+            </p>
+            
+            <a href="joinClass.php">
+            <input type="submit" name="classOption" id="joinClass" value="<?php 
+                if($userLoggedIn->returnDesignation() == "Student"){
+                    echo "Join Class";
+                }
+                else {
+                    echo "Create Class";
+                }
+            ?>">
+            </a>
 
         </div>
 
