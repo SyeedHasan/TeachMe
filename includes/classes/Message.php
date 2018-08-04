@@ -58,22 +58,18 @@ class Message
         $userLoggedIn = $this->user_obj->getUserID();
         $otherUserID = $this->user_obj->getUserIdFromUserName($otherUser);
         $data = "";
-        $get_messages_query = mysqli_query($this->con, "SELECT messageId FROM messageInfo WHERE (senderId='$userLoggedIn' AND receiverId='$otherUserID') OR (receiverId='$userLoggedIn' AND senderId='$otherUserID')");
+        
+        $get_messages_query = mysqli_query($this->con, "SELECT m.messageId, m.messageBody, m.date, info.senderID, info.receiverID FROM message m JOIN messageinfo info ON m.messageId=info.messageId AND ( (info.senderId='$userLoggedIn' AND info.receiverId='$otherUserID') OR (info.receiverId='$userLoggedIn' AND info.senderId='$otherUserID')) ORDER BY info.messageId ASC");
 
-        while($row = mysqli_fetch_array($get_messages_query)) {
-            
-        }
+        while($row = mysqli_fetch_assoc($get_messages_query)) {
+            $user_to = $row['receiverID'];
+            $user_from = $row['senderID'];
+            $body = $row['messageBody'];
+            $div_top = ($user_to == $userLoggedIn) ? "<div class='message green'>" : "<div class='message blue'>";
+            $data = $data . $div_top . $body . "</div><br><br>";
+        } //end of while
 
-        while ($row = mysqli_fetch_array($get_messages_query)) {
-            // $user_to = $row['user_to'];
-            // $user_from = $row['user_from'];
-            // $body = $row['body'];
-
-        //     $div_top = ($user_to == $userLoggedIn) ? "<div class='message' id='green'>" : "<div class='message' id='blue'>";
-        //     $data = $data . $div_top . $body . "</div><br><br>";
-        // } //end of while
-
-        // return $data;
+        return $data;
     }
 
     public function getLatestMessage($userLoggedIn, $user2)

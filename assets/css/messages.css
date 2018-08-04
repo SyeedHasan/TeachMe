@@ -81,6 +81,8 @@ div.selectedUserInfo img {
 div.chat {
     height: 390px;
     background: white;
+    overflow: scroll;
+    padding:10px 20px;
 }
 
 div.chatOptions {
@@ -122,4 +124,25 @@ display: block;
     color:black;
     transition:all 1s;
     border: 1px solid black;
+}
+
+.message {
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 5px 10px;
+	display: inline-block;
+	color: #fff;
+}
+
+.blue {
+	background-color: #3498db;
+	border-color: #2980b9;
+	float: right;
+	margin-bottom: 5px;
+}
+.green {
+	background-color: #2ecc71;
+	border-color: #27ae60;
+	float: left;
+	margin-bottom: 5px;
 }

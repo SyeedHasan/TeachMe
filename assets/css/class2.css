@@ -1,3 +1,5 @@
+/* CONTAINS CODE FOR CLASS.PHP */
+
 .scrollbar {
   background-color: white;
   float: left;
@@ -89,15 +91,14 @@
   margin: 0;
 }
 
-
 #cancel_button {
   right: 400px;
-  top:250px;
+  top: 250px;
 }
 
 #post_button {
-  right:250px;
-  top:250px;
+  right: 250px;
+  top: 250px;
 }
 
 .post_form input:hover {

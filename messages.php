@@ -44,7 +44,6 @@ if(isset($_POST['sendMessage'])){
         <div class="messagesInfo">
             <p id="recent">Recent Conversations</p>
             <hr>
-                <?php $messageObj->getMessages($sendTo); ?>
                 <!-- RUN THE FUNCTION FROM CLASS -->
                 <!-- LOADED CONVOS HERE! -->
 
@@ -59,8 +58,11 @@ if(isset($_POST['sendMessage'])){
             <p class="selectedUser"><!--Insert user's name (the selected one) --> </p>
         </div>
 
-        <div class="chat">
-
+        <div class="chat">        
+            <div class="scrollbar2" id="style-11">
+                <?php echo $messageObj->getMessages($sendTo); ?>
+                <div class="force-overflow2"></div>
+            </div>
         </div>
 
         <div class="chatOptions">
