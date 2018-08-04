@@ -76,5 +76,3 @@ function validateName(name) {
         return false;
     }
 }
-
-

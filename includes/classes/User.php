@@ -50,6 +50,12 @@ class User
         return $query['id'];
     }
 
+    public function getUserNameFromUserID($id){
+        $query = mysqli_query($this->con, "SELECT username FROM regUser WHERE id='$id'");
+        $query = mysqli_fetch_array($query);
+        return $query['username'];
+    }
+
     public function getRollNumber()
     {
         $userid = $this->user['id'];

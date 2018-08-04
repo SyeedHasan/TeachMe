@@ -10,31 +10,6 @@ class Message
         $this->user_obj = new User($con, $user);
     }
 
-    public function getMostRecentUser()
-    {
-        $userLoggedIn = $this->user_obj->getUsername();
-
-        //Limit to one result in message.
-        $query = mysqli_query($this->con, "SELECT user_to, user_from FROM messages WHERE user_to='$userLoggedIn' OR user_from='$userLoggedIn' ORDER BY id DESC LIMIT 1");
-
-        if (mysqli_num_rows($query) == 0) {
-            return false;
-        }
-
-        $row = mysqli_fetch_array($query);
-        $user_to = $row['user_to'];
-        $user_from = $row['user_from'];
-
-        if ($user_to != $userLoggedIn) {
-            return $user_to;
-        }
-        //If you're not user_to which means you sent message so recent user
-        else {
-            return $user_from;
-        }
-
-    }
-
     public function sendMessage($user_to, $body, $date)
     {
         if ($body != "") 
@@ -52,7 +27,7 @@ class Message
         
         }
     }
-
+    
     public function getMessages($otherUser)
     {
         $userLoggedIn = $this->user_obj->getUserID();
@@ -72,15 +47,66 @@ class Message
         return $data;
     }
 
+    public function getConvos()
+    {
+        $userLoggedIn = $this->user_obj->getUserID();
+        $return_string = "";
+
+        $convos = array();
+
+        $query = mysqli_query($this->con, "SELECT senderId, receiverId FROM messageInfo WHERE senderId='$userLoggedIn' OR receiverId='$userLoggedIn' ORDER BY messageId DESC ");
+
+        while ($row = mysqli_fetch_array($query)) {
+            //Because one user is known, other is to be known, which has the convo with us
+            $user_to_push = ($row['senderId'] != $userLoggedIn) ? $row['senderId'] : $row['receiverId'];
+
+            if (!in_array($user_to_push, $convos)) {
+                array_push($convos, $user_to_push);
+            }
+        } // end of while
+
+        foreach ($convos as $userid) {
+            
+            $username = mysqli_query($this->con, "SELECT username FROM regUser WHERE id='$userid'");       
+            $username = mysqli_fetch_array($username);
+            $username = $username['username'];
+
+            $user_found_obj = new User($this->con, $username);
+            $latest_message_details = $this->getLatestMessage($userLoggedIn, $userid); 
+
+            //  C U R  R E N T A U D I T . C H E C K F U N C T I O N T O C O N T I N U E 
+
+            
+            //Length of body > 12
+            $dots = (strlen($latest_message_details[1]) >= 15 ) ? " ..." : "";
+            //Chop of at 12th character
+            $split =  str_split($latest_message_details[1], 12);
+
+            $split = $split[0] . $dots;
+
+            $return_string .= "<a href='messages.php?user=". $user_found_obj->getUsername() ."'> <div class='user_found_messages'>
+                <img src='" . $user_found_obj->getProfilePic() . " 'style='border-radius:5px; margin-right:10px;margin-top:5px;'><span class='profileName'> " . $user_found_obj->getFirstAndLastName() . "</span>
+                <span class='timestamp_smaller' id='grey'> " . $latest_message_details[2] . " </span>
+                <p id='grey' style='margin:0; font-size:15px;'>" . $split . "</p>
+                </div>
+                </a>
+                ";
+
+        }
+
+        return $return_string;
+
+    }  
+
     public function getLatestMessage($userLoggedIn, $user2)
     {
         $details_array = array();
 
-        $query = mysqli_query($this->con, "SELECT body, user_to, date FROM messages WHERE (user_to='$userLoggedIn' AND user_from='$user2') OR (user_to='$user2' AND user_from='$userLoggedIn') ORDER BY id DESC LIMIT 1 ");
+        $query = mysqli_query($this->con, "SELECT m.messageBody, mi.receiverId, m.date FROM message m JOIN messageInfo mi ON m.messageId=mi.messageId WHERE (senderId='$userLoggedIn' AND receiverId='$user2') OR (senderId='$user2' AND receiverId='$userLoggedIn') ORDER BY m.messageId DESC LIMIT 1 ");
 
         $row = mysqli_fetch_array($query);
 
-        $sent_by = ($row['user_to'] == $userLoggedIn) ? "They said: " : "You said: ";
+        $sent_by = ($row['receiverId'] == $userLoggedIn) ? "They said: " : "You said: ";
 
         //Timeframe
         $date_time_now = date("Y-m-d H:i:s");
@@ -106,9 +132,9 @@ class Message
             }
 
             if ($interval->m == 1) {
-                $time_message = $interval->m . " month" . $days;
+                $time_message = $interval->m . " month " . $days;
             } else {
-                $time_message = $interval->m . " months" . $days;
+                $time_message = $interval->m . " months " . $days;
             }
 
         } else if ($interval->d >= 1) {
@@ -139,60 +165,36 @@ class Message
         //End of timeframe
 
         array_push($details_array, $sent_by);
-        array_push($details_array, $row['body']);
+        array_push($details_array, $row['messageBody']);
         array_push($details_array, $time_message);
 
         return $details_array;
 
     }
 
-    public function getConvos()
+    public function getMostRecentUser()
     {
-        $userLoggedIn = $this->user_obj->getUsername();
-        $return_string = "";
+        $userLoggedIn = $this->user_obj->getUserID();
 
-        $convos = array();
+        //Limit to one result in message.
+        $query = mysqli_query($this->con, "SELECT receiverId, senderId FROM messageInfo WHERE receiverId='$userLoggedIn' OR senderId='$userLoggedIn' ORDER BY messageId DESC LIMIT 1");
 
-        $query = mysqli_query($this->con, "SELECT user_to, user_from FROM messages WHERE user_to='$userLoggedIn' OR user_from='$userLoggedIn' ORDER BY id DESC ");
-
-        while ($row = mysqli_fetch_array($query)) {
-            //Because one user is known, other is to be known, which has the convo with us
-            $user_to_push = ($row['user_to'] != $userLoggedIn) ? $row['user_to'] : $row['user_from'];
-
-            if (!in_array($user_to_push, $convos)) {
-                array_push($convos, $user_to_push);
-            }
-        } // end of while
-
-        foreach ($convos as $username) {
-            $user_found_obj = new User($this->con, $username);
-            $latest_message_details = $this->getLatestMessage($userLoggedIn, $username);
-            
-            //Length of body > 12
-            $dots = (strlen($latest_message_details[1]) >= 12 ) ? "..." : "";
-            //Chop of at 12th character
-            $split =  str_split($latest_message_details[1], 12);
-
-            $split = $split[0] . $dots;
-
-            $return_string .= "<a href='messages.php?u=$username'> <div class='user_found_messages'>
-                <img src='" . $user_found_obj->getProfilePic() . " 'style='border-radius:5px; margin-right:5px;'> " . $user_found_obj->getFirstAndLastName() . "
-                <span class='timestamp_smaller' id='grey'> " . $latest_message_details[2] . " </span>
-                <p id='grey' style='margin:0;'>" . $latest_message_details[0] . $split . "</p>
-                </div>
-                </a>
-                ";
-
+        if (mysqli_num_rows($query) == 0) {
+            return false;
         }
 
-        return $return_string;
+        $row = mysqli_fetch_array($query);
+        $user_to = $row['receiverId'];
+        $user_from = $row['senderId'];
 
-    }
+        if ($user_to != $userLoggedIn) {
+            return $user_to;
+        }
+        //If you're not user_to which means you sent message so recent user
+        else {
+            return $user_from;
+        }
 
-    public function getUnreadNumber() {
-        $userLoggedIn = $this->user_obj->getUsername();
-        $query = mysqli_query($this->con, "SELECT * FROM messages WHERE viewed='no' AND user_to='$userLoggedIn' ");
-        return mysqli_num_rows($query);
     }
 
 }

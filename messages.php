@@ -10,11 +10,16 @@ if(isset($_GET['user'])){
 }
 else {
     // Not messaging anyone
-    // $sendTo = $messageObj->getMostRecentUser();
-    $sendTo = false;
+    $sendTo = $messageObj->getMostRecentUser();
+
     //If no message is sent till now,
     if($sendTo == false){
         $sendTo = 'new';
+    }
+    else {
+        $query = mysqli_query($con, "SELECT username FROM regUser WHERE id='$sendTo'");
+        $query = mysqli_fetch_array($query);
+        $sendTo = $query['username'];
     }
 }
 if($sendTo != "new")
@@ -27,9 +32,8 @@ if(isset($_POST['sendMessage'])){
         $date = date("Y-m-d H:i:s");
         $messageObj->sendMessage($sendTo, $body, $date);
     }
-
 }    
-    
+
 ?>
 
 <link rel="stylesheet" href="assets/css/messages.css">
@@ -44,10 +48,12 @@ if(isset($_POST['sendMessage'])){
         <div class="messagesInfo">
             <p id="recent">Recent Conversations</p>
             <hr>
-                <!-- RUN THE FUNCTION FROM CLASS -->
-                <!-- LOADED CONVOS HERE! -->
+            <?php echo $messageObj->getConvos(); ?>
 
-            <a id="newMessage" name="newMessage" href="messages.php?user=new">New Message</a>
+                <!-- RUN THE FUNCTION FROM CLASS -->
+                <!-- LOADED CONVOS HERE! messages.php?user=new is the href for the anchor for newMessage -->
+            
+            <a id="newMessage" name="newMessage" href="#">New Message</a>
         </div>
 
     </div>
@@ -55,20 +61,17 @@ if(isset($_POST['sendMessage'])){
     <div class="rightContainer">
         <div class="selectedUserInfo">
             <img src="assets/images/profile_pics/defaults/default.png" alt="User's Image (From the database)"> 
-            <p class="selectedUser"><!--Insert user's name (the selected one) --> </p>
+            <p class="selectedUser"><?php if($sendTo != "new") { echo $sendTo; } ?></p>
         </div>
 
         <div class="chat">        
-            <div class="scrollbar2" id="style-11">
-                <?php echo $messageObj->getMessages($sendTo); ?>
-                <div class="force-overflow2"></div>
-            </div>
+                <?php echo $messageObj->getMessages($sendTo); ?>            
         </div>
 
         <div class="chatOptions">
-            <form action="messages.php?user=NilaNi" method="POST">
+            <form action="messages.php?user=<?php echo $sendTo; ?>" method="POST">
                 <input type="text" name="messageBody" id="messageBody">
-                <input type="submit" name="sendMessage" value="Send">
+                <input type="submit" class="postSubmitBtn" name="sendMessage" value="Send">
             </form>
         </div>
         
@@ -76,7 +79,76 @@ if(isset($_POST['sendMessage'])){
 
 </div>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Send Message</h2>
+      <span class="close">&times;</span>
+
+    </div>
+    <div class="modal-body">
+        <form action="messages.php">
+            <p>Enter the username of the user you wish to message:</p>
+            <input type="text" name="user" id="sendMsgTo" required>
+            <span class="userErr"></span>
+            <input type="submit" name="userSearch" class="postSubmitBtn" value="Continue">
+        </form>
+
+        <?php
+        if(isset($_POST['userSearch'])){
+            $username = $_POST['user'];
+            $query = mysqli_query($con, "SELECT username FROM regUser WHERE username='$username'");
+
+            if(mysqli_num_rows($query) <= 0){
+                echo '<script>
+                    alert("THIS WAS FOUND!");
+                    var sp = document.querySelector(".userErr");
+                    sp.innerHTML = "No such user found!";
+                
+                </script>';
+            }
+
+        }
+        ?>
+
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("newMessage");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 <?php
     include 'includes/footer.php';
 ?>
