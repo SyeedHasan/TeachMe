@@ -35,7 +35,7 @@ if(isset($_POST['sendMessage'])){
 }    
 
 ?>
-
+<script src="assets/js/jqueryV3.js"></script>
 <link rel="stylesheet" href="assets/css/messages.css">
 <div class="wrapper">
 
@@ -94,25 +94,31 @@ if(isset($_POST['sendMessage'])){
             <p>Enter the username of the user you wish to message:</p>
             <input type="text" name="user" id="sendMsgTo" required>
             <span class="userErr"></span>
-            <input type="submit" name="userSearch" class="postSubmitBtn" value="Continue">
+            <input type="submit" onfocusout="checkUser()" name="userSearch" class="postSubmitBtn" value="Continue">
         </form>
 
-        <?php
-        if(isset($_POST['userSearch'])){
-            $username = $_POST['user'];
-            $query = mysqli_query($con, "SELECT username FROM regUser WHERE username='$username'");
+        <script>
+            // IDENTIFY CORRECT AND INCORRECT USERS SOMEHOW. 
+            // $inp = document.querySelector("#sendMsgTo");
+            // $inp.addEventListener("focusout", function(){ 
+            //     alert("Tjis");
+            //     $val = $('#sendMsgTo');
+            //     $.ajax({
+            //         url:"includes/handlers/ajax_user_check.php",
+            //         type: "get", //request type,
+            //         data: { name: $val },
+            //         success:function(result){
+            //             console.log(result);
+            //         },
+            //         error: function (request, error) {
+            //             console.log(arguments);
+            //             alert(" Can't do because: " + error);
+            //         }
+            //     });
+            // });
 
-            if(mysqli_num_rows($query) <= 0){
-                echo '<script>
-                    alert("THIS WAS FOUND!");
-                    var sp = document.querySelector(".userErr");
-                    sp.innerHTML = "No such user found!";
-                
-                </script>';
-            }
+        </script>
 
-        }
-        ?>
 
     </div>
     <div class="modal-footer">
@@ -149,11 +155,33 @@ window.onclick = function(event) {
     }
 }
 </script>
-<?php
-    include 'includes/footer.php';
-?>
+
+
+<!-- <script src="assets/js/jquery-slim.min.js"></script> -->
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
 
 
 
 
+        <?php
+        // if(isset($_POST['userSearch'])){
+        //     $username = $_POST['user'];
+        //     $query = mysqli_query($con, "SELECT username FROM regUser WHERE username='$username'");
 
+        //     if(mysqli_num_rows($query) <= 0){
+        //         echo '<script>
+        //             alert("THIS WAS FOUND!");
+        //             var sp = document.querySelector(".userErr");
+        //             sp.innerHTML = "No such user found!";
+                
+        //         </script>';
+        //     }
+
+        // }
+        ?>

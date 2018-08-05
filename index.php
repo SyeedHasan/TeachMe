@@ -79,13 +79,13 @@
 
                 ?>
 
-                 <div class="posts_area" >
+                <div class="posts_area" >
                     <hr>
                     <p>Latest Posts</p>
                     
                 </div>
-                    <!-- 
-                <img id="loading" src="assets/images/icons/loading.gif" width="100" > -->
+
+                <img id="loading" src="assets/images/gif/loading1.gif" width="100" >
 
             </div>
             
@@ -123,8 +123,34 @@
     </div>
 
 
+<script src="assets/js/jqueryV3.js"></script>
+<script>
 
-    <!-- <script src="assets/js/main.js"></script> -->
-    <?php 
-        include 'includes/footer.php';
-    ?>
+    let userLoggedIn = '<?php echo $user['username']; ?>';
+
+    $(document).ready(function(){
+        $('#loading').show();
+        
+        //Original AJAX request for loading first posts
+        $.ajax({
+            url: "includes/handlers/ajax_load_posts.php",
+            type: "POST",
+            data: "userLoggedIn=" + userLoggedIn,
+            cache:false,
+            success: function(data){
+                    //Returned with posts so hide loading
+                    $('#loading').hide();
+                    $('.posts_area').append(data);
+            }
+        });
+    });
+
+</script>
+
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

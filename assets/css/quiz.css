@@ -164,7 +164,7 @@ form.createForm input[type="text"] {
 }
 
 .formLabels {
-    font-size: 14;
+    font-size: 14px;
     color: black;
     margin-bottom: 1px;
 }
@@ -187,10 +187,11 @@ div.questionDiv {
     background-color: #EEF2F6;
     margin-left: 25px;
     margin-top: 20px;
+    padding-top:3px;
 }
 
 .quizlabels {
-    font-size: 14;
+    font-size: 14px;
     color: black;
     margin-bottom: 1px;
 }
@@ -212,9 +213,16 @@ div.quest {
 }
 
 i.fa-plus-circle {
-    font-size: 30;
+    font-size: 30px;
+    display:block;
     float: right;
-    margin-right: 10px;
+    margin: 10px 35px 10px 0px;
+}
+
+.logoText {
+    font-size:10px;
+    float:right;
+    /* margin-right:20px; */
 }
 
 .fa-plus-circle:hover {
@@ -224,7 +232,7 @@ i.fa-plus-circle {
 }
 
 #submitQuest {
-    float: right;
+    /* float: right; */
     margin-left: 20px;
 }
 
@@ -236,4 +244,9 @@ form.createForm input[type="submit"] {
     color: white;
     border: 0;
     outline: 0;
+}
+
+.hide {
+    display:none;
+    visibility: hidden;
 }
