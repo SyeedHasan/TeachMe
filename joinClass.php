@@ -5,6 +5,12 @@
     if($userLoggedIn->returnDesignation() == "Teacher"){
         header("Location: index.php");
     }
+
+    if(!($_GET['redirect'])){
+        if($userLoggedIn->returnClassCount() > 0){
+            header("Location: class.php");
+        }
+    }
 ?>
 
 <div>

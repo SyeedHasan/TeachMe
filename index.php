@@ -106,8 +106,16 @@
                 }
                 ?>
             </p>
-            
-            <a href="joinClass.php">
+            <!-- FIX THIS FOR TEACHER! -->
+            <a href="<?php 
+                if($userLoggedIn->returnDesignation() == "Student"){
+                    echo "joinClass.php?redirect=true"; 
+                }
+                else {
+                    echo "createClass.php";
+                }
+        
+            ?>">
             <input type="submit" name="classOption" id="joinClass" value="<?php 
                 if($userLoggedIn->returnDesignation() == "Student"){
                     echo "Join Class";

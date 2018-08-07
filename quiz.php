@@ -1,6 +1,11 @@
 <?php
 
 include("includes/header.php");
+
+if($userLoggedIn->returnDesignation() == "Teacher"){
+    header("Location: createQuiz.php");
+}
+
 $currQuiz = new Quiz($con);
 
 if(isset($_POST['selectedQuiz'])) {

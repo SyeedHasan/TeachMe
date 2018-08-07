@@ -17,11 +17,11 @@ $qsNo = $currQuiz->returnNoOfQuestions($GLOBALS['quizNo']);
         <hr>
         <h5>Marks Obtained: <?php echo $userMarks; ?> out of <?php echo $qsNo; ?></h5>
         <!-- FIX THE DB PART IN THE FUNCTION LINE 122 (FINAL DB BUILD!!) -->
-        <h5>YOU <?php $currQuiz->getStatus($userMarks, $qsNo); ?></h5>
+        <h5>YOU <?php echo $currQuiz->getStatus($userMarks, $qsNo); ?>ED!</h5>
         <small>Your records have been updated. Kindly check your marks in the most recent transcript.</small>
         <small>Press 'Return' to enter to the home page</small>
         <br>
-        <input type="button" value="Return" onclick="location.href='index.php'">
+        <input type="button" value="Return to Home" onclick="location.href='index.php'">
     </div>
 </div>
 
@@ -31,3 +31,4 @@ $qsNo = $currQuiz->returnNoOfQuestions($GLOBALS['quizNo']);
 <?php
     include 'includes/footer.php';
 ?>
+-
