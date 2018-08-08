@@ -64,6 +64,14 @@ class User
         return $row['rollNo'];
     }
 
+    public function getPhoneNumber()
+    {
+        $username = $this->user['username'];
+        $query = mysqli_query($this->con, "SELECT phoneNumber FROM regUser WHERE username='$username'");
+        $row = mysqli_fetch_array($query);
+        return $row['phoneNumber'];
+    }
+
     public function returnDesignation()
     {
         // Get the ID of the user -> Search in DB -> Return the name of the table

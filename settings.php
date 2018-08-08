@@ -7,6 +7,7 @@ include "includes/form_handlers/settings_handler.php";
 
 
 <link rel="stylesheet" href="assets/css/settings.css">
+<script src="assets/js/bootbox.min.js"></script>
 
 <div class="mainClass">
     <ul class="contents">
@@ -37,10 +38,20 @@ include "includes/form_handlers/settings_handler.php";
         <p class="sectionHeader">Phone Number </p>
 
         <form class="sectionHeader" action="#" method="POST">
-            <input id="phoneNum" type="text" name="usrtel" placeholder="Phone Number">
+            <input id="phoneNum" type="text" name="usrtel" pattern="03[0-9]{2}-(?!1234567)(?!1111111)(?!7654321)[0-9]{7}" value="<?php
+             $phoneNum = $userLoggedIn->getPhoneNumber(); 
+             if($phoneNum == 0){
+                 echo "";
+             }
+             else {
+                echo $phoneNum;
+             }
+             
+            ?>" placeholder="Phone Number" required>
+            
             <br>
             <br>
-            <input class="submitBtn" type="submit" value="Save Phone Number">
+            <input class="submitBtn" name="savePhoneNum" type="submit" value="Save Phone Number">
         </form>
 
         <hr>
