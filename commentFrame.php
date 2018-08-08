@@ -1,6 +1,50 @@
-<?php 
-    include("includes/header.php");
+<?php
+
+require 'config/config.php';
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
+include("includes/classes/Message.php");
+include("includes/classes/Quiz.php");
+
+if (isset($_SESSION['username'])) {
+    //If user is logged in, it contains the username
+    $loggedUser = $_SESSION['username'];
+    $firstName = $_SESSION['firstName'];
+    $lastName = $_SESSION['lastName'];
+
+    $user_details_query = mysqli_query($con, "SELECT * FROM regUser WHERE username='$loggedUser'");
+
+    $user = mysqli_fetch_array($user_details_query);
+    //Has an array of all user data.
+    $userLoggedIn = new User($con, $user['username']);
+
+    $designation = $userLoggedIn->returnDesignation();
+
+} else {
+    header("Location: login.php");
+}
+
 ?>
+
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>PlenTree</title>
+
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/icons/favicons/icons.png">
+    
+    <link rel="stylesheet" href="assets/css/all.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="assets/css/home.css">
+
+</head>
+
+<body>
 
 <link rel="stylesheet" href="assets/css/post.css">
 
@@ -49,15 +93,15 @@ function toggle(){
 
 
         <!-- Also passed in a parameter -->
-        <form action="comment_frame.php?post_id=<?php echo $post_id ?>" id="comment_form" id="comment_form" name="postComment<?php echo $post_id ?>" method="POST">
-            <textarea name="post_body"></textarea>
-            <input type="submit" name="postComment<?php echo $post_id ?>" value="Post Comment">
+        <form action="commentFrame.php?postID=<?php echo $postID ?>" id="comment_form" id="comment_form" name="postComment<?php echo $post_id ?>" method="POST">
+            <textarea name="commentBody"></textarea>
+            <input type="submit" name="postComment<?php echo $postID ?>" value="Post Comment">
 
         </form>
 
         <?php
 
-    $get_comments = mysqli_query($con, "SELECT * FROM comments c JOIN commentPost ON c.commentId=cP.commentId WHERE postId='$postID' ORDER BY c.commentId ASC");
+    $get_comments = mysqli_query($con, "SELECT * FROM comments c JOIN commentPost cP ON c.commentId=cP.commentId WHERE postId='$postID' ORDER BY c.commentId ASC");
     $count = mysqli_num_rows($get_comments);
 
     if ($count != 0) {
@@ -144,8 +188,6 @@ function toggle(){
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
                 <?php echo $time_message . "<br>" . $comment_body; ?>
-                
-
 
             </div>
 

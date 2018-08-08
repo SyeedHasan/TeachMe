@@ -172,7 +172,7 @@ class Post
 								</div>
 
 								<div class='posted_by' style='color:#ACACAC;'>
-									<a href='$added_by'> $first_name $last_name </a> $classTo &nbsp;&nbsp;&nbsp;&nbsp;$time_message
+									<a class='postInfo' href='$added_by'> $first_name $last_name </a> $classTo &nbsp;&nbsp;&nbsp;&nbsp;$time_message
 									$delete_button
 								</div>
 								<div id='post_body'>
