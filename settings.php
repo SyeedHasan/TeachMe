@@ -1,3 +1,4 @@
+
 <?php
 
 include "includes/header.php";
@@ -7,7 +8,6 @@ include "includes/form_handlers/settings_handler.php";
 
 
 <link rel="stylesheet" href="assets/css/settings.css">
-<script src="assets/js/bootbox.min.js"></script>
 
 <div class="mainClass">
     <ul class="contents">
@@ -37,7 +37,7 @@ include "includes/form_handlers/settings_handler.php";
         <hr>
         <p class="sectionHeader">Phone Number </p>
 
-        <form class="sectionHeader" action="#" method="POST">
+        <form class="sectionHeader" action="settings.php" method="POST">
             <input id="phoneNum" type="text" name="usrtel" pattern="03[0-9]{2}-(?!1234567)(?!1111111)(?!7654321)[0-9]{7}" value="<?php
              $phoneNum = $userLoggedIn->getPhoneNumber(); 
              if($phoneNum == 0){
@@ -60,7 +60,7 @@ include "includes/form_handlers/settings_handler.php";
         <p id="urlInfo">Did you know you can change your PlenTree profile URL? You can set a unique name, so people can easily search
             and find your profile.</p>
 
-        <form class="urlForm" action="#" method="POST">
+        <form class="urlForm" action="settings.php" method="POST">
             <input class="textField" type="text" name="url" placeholder="www.plentree.com/profile/abc1">
             <input class="submitBtn" type="submit" value="Save Profile URL">
         </form>
@@ -69,7 +69,7 @@ include "includes/form_handlers/settings_handler.php";
 
         <p class="sectionHeader"> Account </p>
 
-        <form class="sectionHeader lastForm" action="#" method="POST">
+        <form class="sectionHeader lastForm" action="settings.php" method="POST">
             <div class="firstName">
                 <p class="formLabels">First Name</p>
                 <input class="textField text" type="text" name="fname" value="<?php echo $user['fName']; ?>">
@@ -336,7 +336,7 @@ include "includes/form_handlers/settings_handler.php";
                 </select>
             </div>
             <br>
-                <input class="submitBtn" type="submit" value="Save Changes">
+                <input class="submitBtn" name="changeNameEmail" type="submit" value="Save Changes">
         </form>
 
 

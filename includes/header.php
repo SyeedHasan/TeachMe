@@ -41,6 +41,8 @@ if (isset($_SESSION['username'])) {
     <link rel="stylesheet" href="assets/css/all.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">   
     <link rel="stylesheet" href="assets/css/home.css">
+    <script src="assets/js/bootbox.min.js"></script>
+
 
 </head>
 
