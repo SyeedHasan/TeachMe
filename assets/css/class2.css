@@ -96,13 +96,14 @@
 }
 
 #cancel_button {
-  right: 400px;
-  top: 250px;
+  right: 430px;
+  top: 240px;
+  width: 10%;
 }
 
 #post_button {
-  right: 250px;
-  top: 250px;
+  right: 280px;
+  top: 240px;
 }
 
 .post_form input:hover {
@@ -112,7 +113,7 @@
 }
 
 .post_form textarea {
-  width: 81%;
+  width: 86%;
   height: 60px;
   border-radius: 3px;
   margin-bottom: 15px;
@@ -152,6 +153,13 @@ ul.allClasses li:nth-of-type(even) {
   background: #EEEEEE;
 }
 
+#selectClass {
+  outline: 0;
+  border: 0;
+  margin-top: 0px;
+  margin-left: 52px;
+}
+
 hr {
   width: 80%;
   margin: 5px auto 10px auto;
@@ -164,4 +172,9 @@ p.head {
 ul.allClasses li a {
   color: black;
   display: block;
+}
+
+div.logos {
+  margin: 0px;
+  margin-left: 29px;
 }

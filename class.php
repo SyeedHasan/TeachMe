@@ -53,6 +53,11 @@
                 <textarea name="post_text" id="post_text" placeholder="Something to say"></textarea>
                 <input type="submit" name="submitPost" id="post_button" value="Post">
                 <input type="reset" name="cancelPost" id="cancel_button" value="Cancel">
+                <select name="selectClass" id="selectClass">
+                    <!-- Returns options containing all classes -->
+                    <?php $userLoggedIn->returnJoinedClasses(); ?> 
+                </select>
+                <br>
                 <div class="logos">
                     <i class="far fa-sticky-note"></i>
                     <i class="fas fa-link"></i>
@@ -60,6 +65,22 @@
                     <i class="fab fa-google-drive"></i>
                 </div>
             </form>
+
+            
+            <?php 
+
+                //SUBMIT A POST
+                if(isset($_POST['submitPost'])){
+                    $selectedClass = $_POST['selectClass'];
+                    $body = $_POST['post_text'];
+                    $userId = $user['id'];
+
+                    $post = new Post($con, $user['username']);
+                    $post->submitPost($selectedClass, $body, $userId);
+
+                }            
+
+            ?>
 
             <div class="posts_area" >
                 <hr>

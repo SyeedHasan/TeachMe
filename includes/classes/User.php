@@ -64,6 +64,14 @@ class User
         return $row['rollNo'];
     }
 
+    public function getInstitueInfo()
+    {
+        $userid = $this->user['id'];
+        $row = mysqli_query($this->con, "SELECT instituteName from teacherInfo WHERE teacherId='$userid' ");
+        $row = mysqli_fetch_array($row);
+        return $row['instituteName'];
+    }
+
     public function getPhoneNumber()
     {
         $username = $this->user['username'];
@@ -158,16 +166,16 @@ class User
 
         //Get the classes the user has joined, else return none as an option.
         if($desg == "Student"){
-            $checkDb = mysqli_query($this->con, "SELECT classroomID FROM classStudents WHERE studentID='$userID' ");
+            $checkDb = mysqli_query($this->con, "SELECT classroomId FROM classStudents WHERE studentID='$userID' ");
         }
         else {
-            $checkDb = mysqli_query($this->con, "SELECT classroomID FROM teacherClassroom WHERE teacherID='$userID' ");
+            $checkDb = mysqli_query($this->con, "SELECT classroomId FROM teacherClassroom WHERE teacherID='$userID' ");
         }
 
         if(mysqli_num_rows($checkDb) != 0){
 
             while($row = mysqli_fetch_array($checkDb)){
-                $classID = $row['classroomID'];
+                $classID = $row['classroomId'];
 
                 $className = mysqli_query($this->con, "SELECT className FROM classrooms WHERE classroomID='$classID'");
                 $className = mysqli_fetch_array($className);

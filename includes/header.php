@@ -50,8 +50,13 @@ if (isset($_SESSION['username'])) {
 
     <nav class="navbar navbar-expand-xl navbar-dark bg-black">
 
-        <a class="navbar-brand" href="index.php">
+        <!-- <a class="navbar-brand" href="index.php">
             <img src="assets/images/logos/pl.png" width="30" height="30" alt="">
+        </a> -->
+        <a class="navbar-brand" href="home.php">
+            <!-- Dont remove the spacing. It doesn't help with the logo -->
+            <span class="firstLetter">P</span>len<span class="firstLetter">T</span>ree
+            <!-- <img src="assets/images/logos/pl.png" width="30" height="30" alt=""> -->
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -109,16 +114,16 @@ if (isset($_SESSION['username'])) {
                         <i class="fas fa-chevron-down"></i>More
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="messages.php">Messages</a>
-                        <a class="dropdown-item" href="settings.php">Settings</a>
+                        <a class="dropdown-item" href="messages.php"><i class="fas fa-comments" style="margin-right:10px;"></i>Messages</a>
+                        <a class="dropdown-item" href="settings.php"><i class="fas fa-cog" style="margin-right:10px;"></i>Settings</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="quiz.php"><i class="fas fa-list-ul" style="margin-right:10px;"></i>Quiz</a>
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            </form> -->
         </div>
     </nav>

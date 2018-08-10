@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="assets/css/home.css">
 
     <style>
+    body {
+        background:transparent;
+    }
+
     form {
         position:absolute;
         top:-4px;

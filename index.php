@@ -10,6 +10,14 @@
         }
     }
 
+    // Set designation
+    if($userLoggedIn->returnDesignation() == "Student"){
+        $_SESSION['userDesg']  = "Student";
+    }
+    else {
+        $_SESSION['userDesg'] = "Teacher";
+    }
+
 ?>
 
     <style>
@@ -31,7 +39,14 @@
 
             <div class="allInfo">
 
-                <p class="rollNumber"><label>Roll Number: <?php echo $userLoggedIn->getRollNumber(); ?></label> </p>
+                <p class="rollNumber"><label>
+                <?php if($_SESSION['userDesg'] == "Student"){
+                    echo "Roll Number: ". $userLoggedIn->getRollNumber() ."";
+                }
+                else {
+                    echo "Institue Name:". $userLoggedIn->getInstitueInfo() ."";
+                }
+                ?> </label> </p>
                 <p class="emailAdd"><label>Email Address:</label> <?php echo $user['email']; ?></p>
                 <p class="userName"><label>User Name:</label> <?php echo $user['username']; ?></p>
                 <p></p>

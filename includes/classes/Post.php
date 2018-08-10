@@ -22,7 +22,7 @@ class Post
         $added_by = $this->user_obj->getUsername();
 
         //insert post
-        $insertPort = mysqli_query($this->con, "INSERT INTO post VALUES('','$date_added','$body')");
+        $insertPort = mysqli_query($this->con, "INSERT INTO post VALUES('','$date_added','$body', '0', '0')");
         $returned_id = mysqli_insert_id($this->con);
 
         $relatePost = mysqli_query($this->con, "INSERT INTO postuser VALUES('$returned_id', '$userId', '$selectedClass') ");
@@ -68,7 +68,7 @@ class Post
                 $className = mysqli_fetch_array($classNameQuery);
                 $className = $className['className'];
 
-                $classTo = "to <a href='" . $className . "'>" . $className . "</a>";
+                $classTo = "to <a href='class.php?className=" . $className . "'>" . $className . "</a>";
 
 
                 //Once 10 posts have been loaded, break
@@ -79,7 +79,7 @@ class Post
                 }
 
                 if ($userLoggedIn == $addedByUserName) {
-                    $delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
+                    $delete_button = "<button class='delete_button btn-danger' id='post$id'> X </button>";
                 } else {
                     $delete_button = "";
                 }
@@ -172,7 +172,8 @@ class Post
 								</div>
 
 								<div class='posted_by' style='color:#ACACAC;'>
-									<a class='postInfo' href='$added_by'> $first_name $last_name </a> $classTo &nbsp;&nbsp;&nbsp;&nbsp;$time_message
+                                    <a class='postInfo' href='profile.php?id=". $added_by ."'> $first_name $last_name </a>
+                                    $classTo &nbsp;&nbsp;&nbsp;&nbsp;$time_message
 									$delete_button
 								</div>
 								<div id='post_body'>
@@ -184,7 +185,7 @@ class Post
 
 								<div class='newsfeedPostOptions'>
 									Comments($comments_check_num)&nbsp;&nbsp;&nbsp;
-									<iframe src='like.php?postID=$id' scrolling='no'></iframe>
+									<iframe allowtransparency='true' style='background: #FFFFFF;' src='like.php?postID=$id' scrolling='no'></iframe>
 								</div>
 
 							</div>
@@ -581,7 +582,6 @@ class Post
 
 							});
 						});
-
 
 					});
 
