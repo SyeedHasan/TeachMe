@@ -196,4 +196,40 @@ class User
     
     }
 
+        
+    public function returnClassIDs()
+    {
+        $userID = $this->user['id'];
+        $desg = $this->returnDesignation();
+
+        //Get the classes the user has joined, else return none as an option.
+        if($desg == "Student"){
+            $checkDb = mysqli_query($this->con, "SELECT classroomId FROM classStudents WHERE studentID='$userID' ");
+        }
+        else {
+            $checkDb = mysqli_query($this->con, "SELECT classroomId FROM teacherClassroom WHERE teacherID='$userID' ");
+        }
+
+        $str = array();
+
+        if(mysqli_num_rows($checkDb) != 0){
+
+            while($row = mysqli_fetch_array($checkDb)){
+                $classID = $row['classroomId'];
+                
+                array_push($str, $classID);
+
+            }
+
+        }
+        else {
+            //No classes found!
+            return $str;
+        }
+
+        return $str;
+    
+    }
+
+
 }

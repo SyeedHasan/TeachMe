@@ -10,15 +10,10 @@ if(isset($_POST['createClass'])){
 
     $classQuery = mysqli_query($con, "INSERT INTO classrooms VALUES('', '$className', '$noOfStudents')");
 
-    $classID = mysqli_query($con, "SELECT classroomID FROM classrooms WHERE className='$className' ");
+    $classID = mysqli_insert_id($con);
+    $teacherQuery = mysqli_query($con, "INSERT INTO teacherClassroom VALUES('$teacherID', '$classID')");
 
-    $classID = mysqli_fetch_array($classID);
-
-    $classroomID = $classID['classroomID'];
-
-    // FIX THIS QUERY!
-    $teacherQuery = mysqli_query($con, "INSERT INTO teacherClassroom VALUES((SELECT teacherID from teacherInfo WHERE teacherID='$teacherID'), (SELECT classroomID FROM classrooms WHERE classroomid='$classroomID'))");
-
+    header("Location: index.php");
 }
 
 //Students Version

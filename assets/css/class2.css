@@ -96,14 +96,21 @@
 }
 
 #cancel_button {
-  right: 430px;
-  top: 240px;
-  width: 10%;
+  position: static;
+  float:right;
+  /* right: 430px;
+  top: 240px; */
+  margin-right:30px;
+  width: 18%;
 }
 
 #post_button {
-  right: 280px;
-  top: 240px;
+  /* right: 280px;
+  top: 240px; */
+  position: static;
+  float:right;
+  margin-right:30px;
+  width:18%;
 }
 
 .post_form input:hover {

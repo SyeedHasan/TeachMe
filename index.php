@@ -41,12 +41,12 @@
 
                 <p class="rollNumber"><label>
                 <?php if($_SESSION['userDesg'] == "Student"){
-                    echo "Roll Number: ". $userLoggedIn->getRollNumber() ."";
+                    echo "Roll Number:</label>  ". $userLoggedIn->getRollNumber() ."";
                 }
                 else {
-                    echo "Institue Name:". $userLoggedIn->getInstitueInfo() ."";
+                    echo "Institue Name: </label> ". $userLoggedIn->getInstitueInfo() ."";
                 }
-                ?> </label> </p>
+                ?></p>
                 <p class="emailAdd"><label>Email Address:</label> <?php echo $user['email']; ?></p>
                 <p class="userName"><label>User Name:</label> <?php echo $user['username']; ?></p>
                 <p></p>
@@ -99,6 +99,7 @@
                     <p>Latest Posts</p>
                     
                 </div>
+                <p>Load More...</p>
 
                 <img id="loading" src="assets/images/gif/loading1.gif" width="100" >
 
@@ -127,7 +128,7 @@
                     echo "joinClass.php?redirect=true"; 
                 }
                 else {
-                    echo "createClass.php";
+                    echo "createClass.php?redirect=true";
                 }
         
             ?>">
@@ -166,6 +167,7 @@
                     $('.posts_area').append(data);
             }
         });
+
     });
 
 </script>

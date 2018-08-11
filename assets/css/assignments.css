@@ -104,7 +104,13 @@ li.tab {
 */
 
 div.to-do {
-    display: block;
+    background: white;
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+div.finished {
     background: white;
     width: 90%;
     height: 100px;
@@ -121,4 +127,13 @@ p#dateLine {
         display: inline-block;
         margin: 15px 10px;
     }
+}
+
+.noDisplay {
+    display:none;
+}
+
+.pHead {
+    font-size:15px;
+    margin-left:10px;
 }

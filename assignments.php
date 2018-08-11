@@ -36,8 +36,13 @@
 
 <div class="to-do">
     <p id="dateLine" >Todays Date is <span id="insertDate"></span> </p>
+    <p class="pHead">Following assignments are due: </p>
 </div>
 
+
+<div class="finished noDisplay">
+    <p class="pHead">Finished assignments will be displayed here:</p>
+</div>
 
 <script src="assets/js/assignments.js"></script>
 <?php
