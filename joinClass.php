@@ -152,7 +152,7 @@ if (isset($_SESSION['username'])) {
 
     <form action="joinClass.php" method="POST">
         <div class="qName">
-            <p class="formLabels">Enter class code:</p>
+            <p class="formLabels">Enter class code (provided by your teacher):</p>
 
         <input class="textField text" type="number" name="classID" id="classID" required>
 
