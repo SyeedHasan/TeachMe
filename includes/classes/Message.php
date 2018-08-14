@@ -74,13 +74,7 @@ class Message
             $user_found_obj = new User($this->con, $username);
             $latest_message_details = $this->getLatestMessage($userLoggedIn, $userid); 
 
-<<<<<<< HEAD
-        //     $div_top = ($user_to == $userLoggedIn) ? "<div class='message' id='green'>" : "<div class='message' id='blue'>";
-        //     $data = $data . $div_top . $body . "</div><br><br>";
-        } //end of while
-=======
             //  C U R  R E N T A U D I T . C H E C K F U N C T I O N T O C O N T I N U E 
->>>>>>> a202926a09f5c9c031150ffe17d6864c99d3f76a
 
             
             //Length of body > 12

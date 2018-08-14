@@ -1,13 +1,5 @@
 
 <?php
-<<<<<<< HEAD
-    include "includes/header.php";
-
-    //Only a teacher can access the creation part
-    // if($userLoggedIn->returnDesignation() == "Student"){
-    //     header("Location: index.php");
-    // }
-=======
 include "includes/header.php";
 
 if ($userLoggedIn->returnDesignation() == "Student") {
@@ -46,7 +38,6 @@ if (isset($_POST['submitQuiz'])) {
     }
 
 }
->>>>>>> a202926a09f5c9c031150ffe17d6864c99d3f76a
 ?>
 
 <link rel="stylesheet" href="assets/css/quiz.css">
