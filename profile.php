@@ -58,13 +58,15 @@
 
         <p class="header">Contact Information</p>
             <p class="data">Email Address: <?php echo $user['email']; ?></p>
-            <p class="data">Phone Number: <?php echo $user['phoneNumber']; ?></p>
+            <p class="data">Phone Number: <?php
+                if($user['phoneNumber'] == 0){
+                    echo "No number provided"; 
+                } 
+                else {
+                    echo $user['phoneNumber'];
+                }    ?></p>
 
     </div>
-    
-
-
-
     
 </div>
 

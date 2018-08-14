@@ -106,14 +106,14 @@ li.tab {
 div.to-do {
     background: white;
     width: 90%;
-    height: 100px;
+    height: 350px;
     margin: 0 auto;
 }
 
 div.finished {
     background: white;
     width: 90%;
-    height: 100px;
+    height: 350px;
     margin: 0 auto;
 }
 
@@ -136,4 +136,37 @@ p#dateLine {
 .pHead {
     font-size:15px;
     margin-left:10px;
+}
+
+#allClasses {
+    color: #5779B7;
+    outline: none;
+    border: none;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+div.allToDos label {
+    margin-left: 10px;
+    margin-top:10px;
+    display:inline-block;
+    width:96%;
+}
+
+div.allToDos input[type="checkbox"] {
+    margin-left:10px;
+    margin-top:10px;
+}
+
+div.allFinished label {
+    margin-left: 10px;
+    margin-top:10px;
+    display:inline-block;
+    width:96%;
+    text-decoration: line-through;
+}
+
+div.allFinished input[type="checkbox"] {
+    margin-left:10px;
+    margin-top:10px;
 }

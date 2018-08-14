@@ -8,11 +8,16 @@
 <div class="dueInfo">
     <p class="dueHeader">
         What's Due
-        <br>
-        <span class="dueFooter">
+        <br>                    
+        <select name="selectClass" id="allClasses">
+            <!-- Returns options containing all classes -->
+            <?php $userLoggedIn->returnJoinedClasses(); ?> 
+        </select>
+        
+        <!-- <span class="dueFooter">
             All Classes
             <i class="fas fa-chevron-down"></i>
-        </span>
+        </span> -->
     </p>
 
     <!-- <p class="dueHeader dropdown">All Classes <i class="fas fa-chevron-down"></i></p> -->
@@ -37,11 +42,22 @@
 <div class="to-do">
     <p id="dateLine" >Todays Date is <span id="insertDate"></span> </p>
     <p class="pHead">Following assignments are due: </p>
+    <div class="allToDos">
+        <input type="checkbox" name="" id=""><label>Complete SRE Assignment &nbsp;&nbsp;</label>
+        <input type="checkbox" name="" id=""><label>Complete WE Assignment &nbsp;&nbsp;</label>
+        <input type="checkbox" name="" id=""><label>Complete CAO assignment &nbsp;&nbsp;</label>
+        <input type="checkbox" name="" id=""><label>Complete PL assignment &nbsp;&nbsp;</label>
+    </div>
 </div>
-
 
 <div class="finished noDisplay">
     <p class="pHead">Finished assignments will be displayed here:</p>
+    <div class="allFinished">
+        <input type="checkbox" name="" id="" checked><label>Complete SRE Assignment &nbsp;&nbsp;</label>
+        <input type="checkbox" name="" id="" checked><label>Complete WE Assignment &nbsp;&nbsp;</label>
+        <input type="checkbox" name="" id="" checked><label>Complete CAO assignment &nbsp;&nbsp;</label>
+        <input type="checkbox" name="" id="" checked><label>Complete PL assignment &nbsp;&nbsp;</label>
+    </div>
 </div>
 
 <script src="assets/js/assignments.js"></script>
