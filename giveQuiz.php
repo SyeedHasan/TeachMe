@@ -8,19 +8,12 @@ $currQuiz->returnQuizQuestions($_SESSION['quizName']);
 // This button is present in the quiz returned by the Quiz class
 if(isset($_POST['submitQuiz'])){
 
-    // echo '
-    // <style> 
-    //     form.column2 {
-    //         display:none;
-    //     }
-    // </style>';
+    $GLOBALS['quizNo'] = $_SESSION['quizName'];
+    $quizNo = $GLOBALS['quizNo'];
 
-    // foreach ($_POST['option1'] as $select)
-    // {
-    //     echo "You have selected :" .$select; // Displaying Selected Value
-    // }
+    $userID = $userLoggedIn->getUserID();
 
-    $userMarks = $currQuiz->checkAnswers();
+    $userMarks = $currQuiz->checkAnswers($quizNo, $userID);
     $_SESSION['userMarks'] = $userMarks;
     header("Location: quizResult.php");
 

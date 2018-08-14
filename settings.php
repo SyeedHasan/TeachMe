@@ -1,6 +1,8 @@
+
 <?php
 
 include "includes/header.php";
+include "includes/form_handlers/settings_handler.php";
 
 ?>
 
@@ -35,11 +37,21 @@ include "includes/header.php";
         <hr>
         <p class="sectionHeader">Phone Number </p>
 
-        <form class="sectionHeader" action="#" method="POST">
-            <input id="phoneNum" type="text" name="usrtel" placeholder="Phone Number">
+        <form class="sectionHeader" action="settings.php" method="POST">
+            <input id="phoneNum" type="text" name="usrtel" pattern="03[0-9]{2}-(?!1234567)(?!1111111)(?!7654321)[0-9]{7}" value="<?php
+             $phoneNum = $userLoggedIn->getPhoneNumber(); 
+             if($phoneNum == 0){
+                 echo "";
+             }
+             else {
+                echo $phoneNum;
+             }
+             
+            ?>" placeholder="Phone Number" required>
+            
             <br>
             <br>
-            <input class="submitBtn" type="submit" value="Save Phone Number">
+            <input class="submitBtn" name="savePhoneNum" type="submit" value="Save Phone Number">
         </form>
 
         <hr>
@@ -48,7 +60,7 @@ include "includes/header.php";
         <p id="urlInfo">Did you know you can change your PlenTree profile URL? You can set a unique name, so people can easily search
             and find your profile.</p>
 
-        <form class="urlForm" action="#" method="POST">
+        <form class="urlForm" action="settings.php" method="POST">
             <input class="textField" type="text" name="url" placeholder="www.plentree.com/profile/abc1">
             <input class="submitBtn" type="submit" value="Save Profile URL">
         </form>
@@ -57,7 +69,7 @@ include "includes/header.php";
 
         <p class="sectionHeader"> Account </p>
 
-        <form class="sectionHeader lastForm" action="#" method="POST">
+        <form class="sectionHeader lastForm" action="settings.php" method="POST">
             <div class="firstName">
                 <p class="formLabels">First Name</p>
                 <input class="textField text" type="text" name="fname" value="<?php echo $user['fName']; ?>">
@@ -324,7 +336,7 @@ include "includes/header.php";
                 </select>
             </div>
             <br>
-                <input class="submitBtn" type="submit" value="Save Changes">
+                <input class="submitBtn" name="changeNameEmail" type="submit" value="Save Changes">
         </form>
 
 

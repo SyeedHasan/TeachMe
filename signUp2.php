@@ -99,6 +99,21 @@ if(!isset($_GET['desg'])){
 					}
 					?>
 
+					
+					<!-- Check for every error in the list -->
+					<?php if(in_array("Your first name must be between 2 and 25 characters.<br>", $error_array)) echo "<p class='errors'>Your first name must be between 2 and 25 characters</p>" ?>
+			        <?php if(in_array("Your last name must be between 2 and 25 characters<br>", $error_array)) echo "<p class='errors'>Your last name must be between 2 and 25 characters</p>" ?>
+					<?php if(in_array("Your user name must be between 2 and 25 characters<br>", $error_array)) echo "<p class='errors'>Your user name must be between 2 and 25 characters</p>" ?>
+					<?php if(in_array("Username already in use. <br>", $error_array)) echo "<p class='errors'>Username already in use</p>" ?>
+
+					<?php if(in_array("Email already in use. <br>", $error_array)) echo "<p class='errors'>Email already in use</p>";
+					if(in_array("Invalid format! <br>", $error_array)) echo "<p class='errors'>Invalid format!</p>"; ?>
+
+					<?php
+					if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "<p class='errors'>Your password can only contain english characters or numbers</p>";
+					if(in_array("Your password must be between 5 and 25 characters<br>", $error_array)) echo "<p class='errors'>Your password must be between 5 and 25 characters</p>" ?>
+
+
 					<div class="cont-button">
 							<div class="bg">
 								<input class="loginButton" name="registerButton" type="submit" value="Sign Up">

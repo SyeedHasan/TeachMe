@@ -50,12 +50,34 @@ class User
         return $query['id'];
     }
 
+    public function getUserNameFromUserID($id){
+        $query = mysqli_query($this->con, "SELECT username FROM regUser WHERE id='$id'");
+        $query = mysqli_fetch_array($query);
+        return $query['username'];
+    }
+
     public function getRollNumber()
     {
         $userid = $this->user['id'];
         $row = mysqli_query($this->con, "SELECT rollNo from studentInfo WHERE studentID='$userid' ");
         $row = mysqli_fetch_array($row);
         return $row['rollNo'];
+    }
+
+    public function getInstitueInfo()
+    {
+        $userid = $this->user['id'];
+        $row = mysqli_query($this->con, "SELECT instituteName from teacherInfo WHERE teacherId='$userid' ");
+        $row = mysqli_fetch_array($row);
+        return $row['instituteName'];
+    }
+
+    public function getPhoneNumber()
+    {
+        $username = $this->user['username'];
+        $query = mysqli_query($this->con, "SELECT phoneNumber FROM regUser WHERE username='$username'");
+        $row = mysqli_fetch_array($query);
+        return $row['phoneNumber'];
     }
 
     public function returnDesignation()
@@ -116,5 +138,98 @@ class User
         }
     
     }
+
+    public function returnClassCount()
+    {
+        $userID = $this->user['id'];
+        $desg = $this->returnDesignation();
+
+        //Get the classes the user has joined, else return none as an option.
+        if($desg == "Student"){
+            $checkDb = mysqli_query($this->con, "SELECT COUNT(classroomID) FROM classStudents WHERE studentID='$userID' ");
+        }
+        else {
+            $checkDb = mysqli_query($this->con, "SELECT COUNT(classroomID) FROM teacherClassroom WHERE teacherID='$userID' ");
+        }
+
+        $checkDb = mysqli_fetch_array($checkDb);
+        return $checkDb[0];
+
+        
+    }
+
+    
+    public function returnClasses()
+    {
+        $userID = $this->user['id'];
+        $desg = $this->returnDesignation();
+
+        //Get the classes the user has joined, else return none as an option.
+        if($desg == "Student"){
+            $checkDb = mysqli_query($this->con, "SELECT classroomId FROM classStudents WHERE studentID='$userID' ");
+        }
+        else {
+            $checkDb = mysqli_query($this->con, "SELECT classroomId FROM teacherClassroom WHERE teacherID='$userID' ");
+        }
+
+        if(mysqli_num_rows($checkDb) != 0){
+
+            while($row = mysqli_fetch_array($checkDb)){
+                $classID = $row['classroomId'];
+
+                $className = mysqli_query($this->con, "SELECT className FROM classrooms WHERE classroomID='$classID'");
+                $className = mysqli_fetch_array($className);
+                $className = $className['className'];
+
+                $str = "<li value='".$classID."'><a href='class.php?currClass=". $classID ."'>". $className ."</a></li>";
+                
+                echo $str;
+
+            }
+
+        }
+        else {
+            //No classes found!
+            $str = "<option>No classes found!</option>";
+            echo $str;
+        }
+    
+    }
+
+        
+    public function returnClassIDs()
+    {
+        $userID = $this->user['id'];
+        $desg = $this->returnDesignation();
+
+        //Get the classes the user has joined, else return none as an option.
+        if($desg == "Student"){
+            $checkDb = mysqli_query($this->con, "SELECT classroomId FROM classStudents WHERE studentID='$userID' ");
+        }
+        else {
+            $checkDb = mysqli_query($this->con, "SELECT classroomId FROM teacherClassroom WHERE teacherID='$userID' ");
+        }
+
+        $str = array();
+
+        if(mysqli_num_rows($checkDb) != 0){
+
+            while($row = mysqli_fetch_array($checkDb)){
+                $classID = $row['classroomId'];
+                
+                array_push($str, $classID);
+
+            }
+
+        }
+        else {
+            //No classes found!
+            return $str;
+        }
+
+        return $str;
+    
+    }
+
 
 }

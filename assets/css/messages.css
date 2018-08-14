@@ -1,28 +1,29 @@
 div.wrapper {
-    width:90%;
-    margin:50px auto;
+    width: 90%;
+    margin: 50px auto;
     height: 80%;
     background: #E0E0E0;
 }
 
 div.leftContainer {
-    width:30%;
-    height:100%;
+    width: 30%;
+    height: 100%;
     overflow: hidden;
 }
 
 div.leftContainer div.profileInfo {
-    width:90%;
+    width: 90%;
     margin: 0px auto;
-    margin-top:20px;
-    height: 100px;
+    margin-top: 20px;
+    height: 85px;
     background: #FAFAFA;
-    padding:5px 50px;
+    padding: 5px;
+    text-align: center;
     border-radius: 5px;
 }
 
 div.leftContainer div.messagesInfo {
-    width:90%;
+    width: 90%;
     margin: 10px auto;
     height: 390px;
     background: #FAFAFA;
@@ -31,22 +32,22 @@ div.leftContainer div.messagesInfo {
 
 img.userPic {
     width: auto;
-    height: 70px;   
+    height: 60px;
 }
 
 p.name {
-    display:inline-block;
+    display: inline-block;
+    font-size:15px;
 }
 
 div.rightContainer {
     width: 60%;
     height: 500px;
     position: absolute;
-    right:100px; 
-    top:130px;
+    right: 100px;
+    top: 130px;
     background: #FAFAFA;
     z-index: 1;
-
 }
 
 #recent {
@@ -56,70 +57,255 @@ div.rightContainer {
 
 div.messagesInfo hr {
     width: 50%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 div.selectedUserInfo {
-    height:50px;
-    width:100%;
+    height: 50px;
+    width: 100%;
     text-align: left;
-    padding:10px 20px;
+    padding: 10px 20px;
     background: #EEE;
 }
 
 p.selectedUser {
-    display:inline-block;
-    
+    display: inline-block;
+    padding-left: 10px;
 }
 
 div.selectedUserInfo img {
-    border-radius:50%;
-    height:25px;
+    border-radius: 50%;
+    height: 25px;
     width: auto;
 }
 
 div.chat {
     height: 390px;
     background: white;
+    overflow: scroll;
+    padding: 10px 20px;
 }
 
 div.chatOptions {
     background: #EEE;
-    height:60px;
+    height: 60px;
 }
 
 div.chatOptions input[type="text"] {
-    outline:none;
-    width:80%;
-    height:40px;
-    margin:10px 10px 10px 10px;
-    border:0;
-    padding-left:5px;
-    
+    outline: none;
+    width: 80%;
+    height: 40px;
+    margin: 10px 10px 10px 10px;
+    border: 0;
+    padding-left: 5px;
 }
 
-div.chatOptions input[type="submit"] {
-    width:110px;
-    height:40px;
-    background:black;
-    color:white;
-    border:0;
+.postSubmitBtn {
+    width: 110px;
+    height: 40px;
+    background: black;
+    color: white;
+    border: 0;
     outline: 0;
 }
 
+.postSubmitBtn:hover {
+    background: white;
+    color: black;
+    transition: all 1.5s;
+}
+
 #newMessage {
-color:white;
-text-align: center;
-margin: 20px auto;
-background: black;
-width:70%;
-padding:10px;
-display: block;
+    color: white;
+    text-align: center;
+    margin: 20px auto;
+    background: black;
+    width: 70%;
+    padding: 10px;
+    display: block;
 }
 
 #newMessage:hover {
-    background:white;
-    color:black;
-    transition:all 1s;
-    border: 1px solid black;
+    background: white;
+    color: black;
+    transition: all 1s;
+}
+
+.message {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: inline-block;
+    color: #fff;
+}
+
+.blue {
+    background-color: #3498db;
+    border-color: #2980b9;
+    float: right;
+    margin-bottom: 5px;
+}
+
+.green {
+    background-color: #2ecc71;
+    border-color: #27ae60;
+    float: left;
+    margin-bottom: 5px;
+}
+
+/* MODAL */
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #2980b9;
+    height: 70px;
+    color: white;
+}
+
+div.modal-header h2 {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.modal-body {
+    padding: 10px 16px;
+}
+
+.modal-body input[type="text"] {
+    width: 50%;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid gray;
+}
+
+.modal-body input[type="submit"] {
+    width: 190px;
+    display: block;
+    margin-top: 20px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #2980b9;
+    color: white;
+}
+
+/* Found messages  */
+
+.timestamp_smaller {
+    font-size: 85%;
+    padding-left: 8px;
+    margin: 0;
+}
+
+.user_found_messages {
+    color: black;
+    border-bottom: 1px solid #D3D3D3;
+    padding: 8px 8px 10px 8px;
+}
+
+.user_found_messages:hover {
+    background-color: #D3D3D3;
+}
+
+.user_found_messages img {
+    height: 35px;
+    float: left;
+}
+
+#grey {
+    color: #8C8C8C;
+}
+
+.profileName {
+    font-size: 15px;
+}
+
+.userErr {
+    color: red;
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
 }

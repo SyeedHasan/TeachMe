@@ -36,7 +36,7 @@ class Quiz
 
         // Get question and its options/answer with the quiz number provided by the user
         $questionAns = mysqli_query($this->con,
-            "   SELECT Q.questionDesc, O.opt1, O.opt2, O.opt3, O.corrAns
+            "SELECT Q.questionDesc, O.opt1, O.opt2, O.opt3, O.corrAns
             FROM questions Q
             JOIN quizQs Qs ON Qs.questionID=Q.questionID
             JOIN quiz ON Qs.quizID=quiz.quizID AND quiz.quizID='$quizNumber'
@@ -70,7 +70,7 @@ class Quiz
                 <p><input type="radio" id="choice3" name="option' . $currQs . '[]" value="' . $option3 . '">
                 <label for="question' . $currQs . '">' . $option3 . '</label></p>
 
-                <p><input type="hidden" id="choice3" name="optionAns' . $currQs .'" value="' . $correctOpt . '"></p>
+                <p><input type="hidden" id="choice3" name="optionAns' . $currQs . '" value="' . $correctOpt . '"></p>
 
             </div>
            ';
@@ -101,8 +101,8 @@ class Quiz
     }
 
     //Checks the users answers and return the total number or correct answers
-    public function checkAnswers()
-    {   
+    public function checkAnswers($quizID, $userID)
+    {
 
         $qsCount = $this->returnNoOfQuestions($_SESSION['quizName']);
 
@@ -110,17 +110,19 @@ class Quiz
         $userMarks = 0;
 
         for ($x = 1; $x <= $qsCount; $x++) {
-            $userOption = $_POST['option'. $x];
+            $userOption = $_POST['option' . $x];
 
             foreach ($userOption as $select) {
-                if($select == $_POST['optionAns'. $x]){
+                if ($select == $_POST['optionAns' . $x]) {
                     $userMarks++;
                 }
             }
         }
 
-        // MAKE CHANGES TO THE DATABASE
-            // ONLY WHEN THE FINAL DB IS MADE!
+        //Submit result
+        $status = $this->getStatus($userMarks, $qsCount);
+
+        $insertQ = mysqli_query($this->con, "INSERT INTO quizResults VALUES('', '$userID', '$quizID', '$userMarks', '$status') ");
 
         return $userMarks;
 
@@ -129,12 +131,68 @@ class Quiz
     public function getStatus($marks, $total)
     {
         $percentage = ($marks / $total) * 100;
-        if($percentage >= 50){
-            echo 'PASSED!';
+        $res = "";
+        if ($percentage >= 50) {
+            $res = 'PASS';
+        } else {
+            $res = 'FAIL';
+        }
+
+        return $res;
+    }
+
+    public function submitResult($quizID, $marks) {
+
+    }
+
+
+    // TO INSERT NEW QUIZ
+
+    public function submitQuizInfo($qName, $qTime, $teacherName)
+    {
+        $query = mysqli_query($this->con, "INSERT INTO quiz VALUES('', '$qName', '$teacherName', '$qTime') ");
+        if($query){ 
+            return mysqli_insert_id($this->con);
         }
         else {
-            echo 'FAILED!';
+            return "Can't insert into database";
         }
+    }
+
+    public function submitQuizOptions($opt1, $opt2, $opt3, $corrAns) 
+    {
+        $query = mysqli_query($this->con, "INSERT INTO options VALUES('', '$opt1', '$opt2', '$opt3', '$corrAns')");
+        if($query){ 
+            return mysqli_insert_id($this->con);
+        }
+        else {
+            return "Can't insert the options in the database";
+        }
+        
+    }
+
+    public function submitQuizQuestion($qsDesc, $optionsID) 
+    {
+        $query = mysqli_query($this->con, "INSERT INTO questions VALUES('', '$qsDesc', '$optionsID')");
+        if($query){ 
+            return mysqli_insert_id($this->con);
+        }
+        else {
+            return "Can't insert the questions in the database";
+        }
+        
+    }
+
+    public function submitQuiz($quizID, $questionID) 
+    {
+        $query = mysqli_query($this->con, "INSERT INTO quizQs VALUES('$quizID','$questionID')");
+        if($query){ 
+            return "Successful!";
+        }
+        else {
+            return "Database Error!";
+        }
+        
     }
 
 }

@@ -10,6 +10,14 @@
         }
     }
 
+    // Set designation
+    if($userLoggedIn->returnDesignation() == "Student"){
+        $_SESSION['userDesg']  = "Student";
+    }
+    else {
+        $_SESSION['userDesg'] = "Teacher";
+    }
+
 ?>
 
     <style>
@@ -31,7 +39,14 @@
 
             <div class="allInfo">
 
-                <p class="rollNumber"><label>Roll Number: <?php echo $userLoggedIn->getRollNumber(); ?></label> </p>
+                <p class="rollNumber"><label>
+                <?php if($_SESSION['userDesg'] == "Student"){
+                    echo "Roll Number:</label>  ". $userLoggedIn->getRollNumber() ."";
+                }
+                else {
+                    echo "Institue Name: </label> ". $userLoggedIn->getInstitueInfo() ."";
+                }
+                ?></p>
                 <p class="emailAdd"><label>Email Address:</label> <?php echo $user['email']; ?></p>
                 <p class="userName"><label>User Name:</label> <?php echo $user['username']; ?></p>
                 <p></p>
@@ -79,13 +94,14 @@
 
                 ?>
 
-                 <div class="posts_area" >
+                <div class="posts_area" >
                     <hr>
                     <p>Latest Posts</p>
                     
                 </div>
-                    <!-- 
-                <img id="loading" src="assets/images/icons/loading.gif" width="100" > -->
+                <p>Load More...</p>
+
+                <img id="loading" src="assets/images/gif/loading1.gif" width="100" >
 
             </div>
             
@@ -106,8 +122,16 @@
                 }
                 ?>
             </p>
-            
-            <a href="joinClass.php">
+            <!-- FIX THIS FOR TEACHER! -->
+            <a href="<?php 
+                if($userLoggedIn->returnDesignation() == "Student"){
+                    echo "joinClass.php?redirect=true"; 
+                }
+                else {
+                    echo "createClass.php?redirect=true";
+                }
+        
+            ?>">
             <input type="submit" name="classOption" id="joinClass" value="<?php 
                 if($userLoggedIn->returnDesignation() == "Student"){
                     echo "Join Class";
@@ -123,8 +147,37 @@
     </div>
 
 
+<script src="assets/js/jqueryV3.js"></script>
+<script>
 
-    <!-- <script src="assets/js/main.js"></script> -->
-    <?php 
-        include 'includes/footer.php';
-    ?>
+    let userLoggedIn = '<?php echo $user['username']; ?>';
+
+    $(document).ready(function(){
+        $('#loading').show();
+        
+        //Original AJAX request for loading first posts
+        $.ajax({
+            url: "includes/handlers/ajax_load_posts.php",
+            type: "POST",
+            data: "userLoggedIn=" + userLoggedIn,
+            cache:false,
+            success: function(data){
+                    //Returned with posts so hide loading
+                    $('#loading').hide();
+                    $('.posts_area').append(data);
+            }
+        });
+
+    });
+
+</script>
+
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootbox.min.js"></script>
+
+
+
+</body>
+
+</html>

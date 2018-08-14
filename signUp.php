@@ -3,11 +3,22 @@
 require 'config/config.php';
 require 'includes/form_handlers/register_handler.php';
 
-if(!isset($_GET['desg'])){
+if(!(isset($_GET['desg']))){
 	header("Location: home.php?err=noselect");
 }
 else {
-	$_SESSION['desg'] = $_GET['desg'];
+
+	if(($_GET['desg'] == "teacher")){
+		$_SESSION['desg'] = "teacher";
+	}
+	elseif(($_GET['desg'] == "student")){
+		$_SESSION['desg'] = "student";
+	}
+	else {
+		echo "this w";
+		header("Location: home.php?err=noselect");		
+	}
+
 }
 
 ?>
