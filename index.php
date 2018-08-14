@@ -44,7 +44,7 @@
                     echo "Roll Number:</label>  ". $userLoggedIn->getRollNumber() ."";
                 }
                 else {
-                    echo "Institue Name: </label> ". $userLoggedIn->getInstitueInfo() ."";
+                    echo "Institute Name: </label> ". $userLoggedIn->getInstitueInfo() ."";
                 }
                 ?></p>
                 <p class="emailAdd"><label>Email Address:</label> <?php echo $user['email']; ?></p>

@@ -81,39 +81,6 @@ if (isset($_POST['submitQuiz'])) {
                 <input class="textField text" type="text" name="correctAnswer[]" required>
             </div>
         </div>
-<<<<<<< HEAD
-
-        <div class="questionDiv">
-            <div class="quest" >
-                <p class="quizlabels">Question</p>
-                <input class="textField text" type="text" name="question">
-            </div>
-            <div class="quizOpt">
-                <p class="quizOptions">Option 1</p>
-                <input class="textField text" type="text" name="option1">
-            </div>
-            <div class="quizOpt">
-                <p class="quizOptions">Option 2</p>
-                <input class="textField text" type="text" name="option2">
-            </div>
-            <div class="quizOpt">
-            <p class="quizOptions">Option 3</p>
-                <input class="textField text" type="text" name="option3">
-            </div>
-            <div class="quest" >
-                <p class="quizlabels">Correct Answer</p>
-                <input class="textField text" type="text" name="correctAnswer">
-            </div>
-        </div>
-
-        <!-- On pressing this plus button, re-create the entire form -->
-
-        <i class="fas fa-plus-circle"></i>
-
-        <input id="submitQuest" class="submitBtn" type="submit" value="Save Changes">
-
-    </form>
-=======
     </div>
 
     <i class="fas fa-plus-circle"></i>
@@ -150,20 +117,14 @@ if (isset($_POST['submitQuiz'])) {
         </div>
     </div>
 </div>
->>>>>>> a202926a09f5c9c031150ffe17d6864c99d3f76a
 
 <script src="assets/js/jqueryV3.js"></script>
 <script>
 
-<<<<<<< HEAD
-</div>
-
-=======
 $('.fa-plus-circle').on("click", function(){
     $(".mainTemplate").append($("#qsTemplate").html());
 });
 </script>
->>>>>>> a202926a09f5c9c031150ffe17d6864c99d3f76a
 
 
 <script src="assets/js/quiz.js"></script>

@@ -48,13 +48,7 @@ if(isset($_POST['sendMessage'])){
         <div class="messagesInfo">
             <p id="recent">Recent Conversations</p>
             <hr>
-<<<<<<< HEAD
-                <?php //$messageObj->getMessages($sendTo); ?>
-                <!-- RUN THE FUNCTION FROM CLASS -->
-                <!-- LOADED CONVOS HERE! -->
-=======
             <?php echo $messageObj->getConvos(); ?>
->>>>>>> a202926a09f5c9c031150ffe17d6864c99d3f76a
 
                 <!-- RUN THE FUNCTION FROM CLASS -->
                 <!-- LOADED CONVOS HERE! messages.php?user=new is the href for the anchor for newMessage -->
