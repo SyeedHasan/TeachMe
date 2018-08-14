@@ -256,3 +256,14 @@ a.anchortags .fas {
     font-size: 13px;
     margin-top: 4px;
 }
+
+span.oldPwErr {
+    color: red;
+    display:block;
+}
+
+span.newPwErr {
+    display:block;
+    color: rgba(14, 114, 14, 0.815);
+
+}

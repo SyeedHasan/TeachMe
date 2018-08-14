@@ -44,7 +44,7 @@ if(isset($_POST['sendMessage'])){
         <div class="messagesInfo">
             <p id="recent">Recent Conversations</p>
             <hr>
-                <?php $messageObj->getMessages($sendTo); ?>
+                <?php //$messageObj->getMessages($sendTo); ?>
                 <!-- RUN THE FUNCTION FROM CLASS -->
                 <!-- LOADED CONVOS HERE! -->
 

@@ -9,31 +9,32 @@ if(isset($_POST['changePassword'])){
     $password = $_POST['npassword2'];
 
     $dbPassword = $user['password'];
-    $dbPassword = md5($dbPassword);
+    $cPassword = md5($cPassword);
 
     $msg = "";
-
     //Validate the old password field    
     if(!($cPassword == $dbPassword)){
-        echo '<script>
-            var pw = document.querySelector("oldPwErr");
-            pw.innerHTML = "Password doesn\'t match!"; 
-        </script>';
-    
+        $error = 0;
+        header("Location: password.php?err=nomatch");
+    }
+    else {
+        $error=1;
     }
 
-
     //Check to see if the new passwords match
-    if($nPassword == $password) {
+    if(($nPassword == $password) && $error==1) {
         //Fields match
         $password = md5($password);
         //Change the password in the database
-        $query = mysqli_query($con, "UPDATE regUser SET password='$password' WHERE username='$uName' ");
+       $query = mysqli_query($con, "UPDATE regUser SET password='$password' WHERE username='$uName' ");
+
+       header("Location:password.php?changed=changed");
 
     }
+    else {
+        header("Location:password.php?notchanged=err");
 
-
-
+    }
 
 }
 
