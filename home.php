@@ -44,7 +44,7 @@
 
     <div class="mainHeader colorA">
         <h3 class="head">Teach More. Learn More.</h3>
-        <p>Millions of teachers use Edmodo to engage students, connect with other teachers, and involve parents.</p>
+        <p id='para'>Connect.Learn.Share</p>
         <p>Create an account on PlenTree today and join the community.</p>
         <?php if(isset($_GET['err'])){ 
             echo '<p style="color:red">Kindly select one of these signup options.</p>';
@@ -62,10 +62,10 @@
                 <img src="assets/images/features/image_classroom.png" alt="">
             </div>
             <div class="contentContainer">
-                <h1>Focus on learning</h1>
-                <p class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quisquam consequuntur facere incidunt laudantium
-                    voluptate nesciunt provident veritatis cum magni deleniti nemo, consectetur mollitia perspiciatis aspernatur
-                    est excepturi quia at.</p>
+                <h1>Effective Learning</h1>
+                <p class="content-summary">With intuitive features enabling to grow more in 
+                learning and adapt effective learning techniques such as e-quiz, 
+                it helps you take quizzes created by teacher.</p>
             </div>
         </div>
 
@@ -75,10 +75,11 @@
                 <img src="assets/images/features/image_classroom.png" alt="">
             </div>
             <div class="contentContainer-left">
-                <h1>Focus on learning</h1>
-                <p class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quisquam consequuntur facere incidunt laudantium
-                    voluptate nesciunt provident veritatis cum magni deleniti nemo, consectetur mollitia perspiciatis aspernatur
-                    est excepturi quia at.</p>
+                <h1>Single Access Point</h1>
+                <p class="content-summary"> A single gateway or logon to identify approved users, 
+                making it unnecessary to sign onto each of the different systems that provide portal content, 
+                for example, the e-learning facility, 
+                or full- text content such as digital journals or other sources of information.</p>
             </div>
 
         </div>
@@ -88,10 +89,11 @@
                 <img src="assets/images/features/image_classroom.png" alt="">
             </div>
             <div class="contentContainer">
-                <h1>Focus on learning</h1>
-                <p class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quisquam consequuntur facere incidunt laudantium
-                    voluptate nesciunt provident veritatis cum magni deleniti nemo, consectetur mollitia perspiciatis aspernatur
-                    est excepturi quia at.</p>
+                <h1>Single Access Point</h1>
+                <p class="content-summary">: A single gateway or logon to identify approved users, 
+                making it unnecessary to sign onto each of the different systems that provide portal content, 
+                for example, the e-learning facility, 
+                or full- text content such as digital journals or other sources of information.</p>
             </div>
         </div>
 
@@ -101,10 +103,10 @@
                 <img src="assets/images/features/image_classroom.png" alt="">
             </div>
             <div class="contentContainer-left">
-                <h1>Focus on learning</h1>
-                <p class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quisquam consequuntur facere incidunt laudantium
-                    voluptate nesciunt provident veritatis cum magni deleniti nemo, consectetur mollitia perspiciatis aspernatur
-                    est excepturi quia at.</p>
+                <h1>Collaboration Tools</h1>
+                <p class="content-summary">These include threaded discussions, chat, 
+                and news board that offer a whole range of ways to communicate and share information. Plentree is a education network that helps connect all 
+                learners with the people and resources needed to reach their full potential.</p>
             </div>
 
         </div>
@@ -114,10 +116,10 @@
                 <img src="assets/images/features/image_classroom.png" alt="">
             </div>
             <div class="contentContainer">
-                <h1>Focus on learning</h1>
-                <p class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quisquam consequuntur facere incidunt laudantium
-                    voluptate nesciunt provident veritatis cum magni deleniti nemo, consectetur mollitia perspiciatis aspernatur
-                    est excepturi quia at.</p>
+                <h1>Easy</h1>
+                <p class="content-summary">It integrates/streamlines information and services, 
+                improves service to students/ teacher, offers personalized/customized/targeted service,
+                 improves administration efficiency, and attracts students..</p>
             </div>
         </div>
 
@@ -127,10 +129,9 @@
                 <img src="assets/images/features/image_classroom.png" alt="">
             </div>
             <div class="contentContainer-left">
-                <h1>Focus on learning</h1>
-                <p class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quisquam consequuntur facere incidunt laudantium
-                    voluptate nesciunt provident veritatis cum magni deleniti nemo, consectetur mollitia perspiciatis aspernatur
-                    est excepturi quia at.</p>
+                <h1>Collaboration Tools</h1>
+                <p class="content-summary">These include threaded discussions, chat, 
+                and news board that offer a whole range of ways to communicate and share information.</p>
             </div>
 
         </div>
