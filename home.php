@@ -90,7 +90,7 @@
             </div>
             <div class="contentContainer">
                 <h1>Single Access Point</h1>
-                <p class="content-summary">: A single gateway or logon to identify approved users, 
+                <p class="content-summary"> A single gateway or logon to identify approved users, 
                 making it unnecessary to sign onto each of the different systems that provide portal content, 
                 for example, the e-learning facility, 
                 or full- text content such as digital journals or other sources of information.</p>
@@ -131,7 +131,7 @@
             <div class="contentContainer-left">
                 <h1>Collaboration Tools</h1>
                 <p class="content-summary">These include threaded discussions, chat, 
-                and news board that offer a whole range of ways to communicate and share information.</p>
+                and news board that offer a whole range of ways to communicate and share information, communicate and share information. communicate and share information.</p>
             </div>
 
         </div>

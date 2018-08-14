@@ -214,11 +214,6 @@ div.quest {
 
 i.fa-plus-circle {
     font-size: 30px;
-<<<<<<< HEAD
-    float: right;
-    margin-top:20px;
-    margin-right: 50px;
-=======
     display:block;
     float: right;
     margin: 10px 35px 10px 0px;
@@ -228,7 +223,6 @@ i.fa-plus-circle {
     font-size:10px;
     float:right;
     /* margin-right:20px; */
->>>>>>> a202926a09f5c9c031150ffe17d6864c99d3f76a
 }
 
 .fa-plus-circle:hover {

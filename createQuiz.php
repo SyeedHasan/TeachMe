@@ -56,7 +56,7 @@ if (isset($_POST['submitQuiz'])) {
         
         <div class="qTime">
             <p class="formLabels">Quiz Time</p>
-            <input class="textField text" type="text" name="qTime" required>
+            <input class="textField text" type="number" name="qTime" required>
         </div>
     <div class="mainTemplate">
         <div class="questionDiv">

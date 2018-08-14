@@ -99,6 +99,7 @@
                     <p>Latest Posts</p>
                     
                 </div>
+                
                 <p>Load More...</p>
 
                 <img id="loading" src="assets/images/gif/loading1.gif" width="100" >
