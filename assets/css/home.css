@@ -499,3 +499,10 @@ a {
 div.newsfeedPostOptions iframe {
     background:transparent;
 }
+i.fa-times{
+    float: right;
+}
+i.fa-times:hover{
+    transition: 1.5s;
+    color:#17a2b8;
+}
