@@ -7,7 +7,7 @@ require '../../config/config.php';
 	if(isset($_POST['result'])) {
 		if($_POST['result'] == 'true')
 			$query = mysqli_query($con, "DELETE FROM postUser WHERE postId='$post_id'");
-            $query = mysqli_query($con, "DELETE FROM post WHERE postID='$post_id'");
+            $query = mysqli_query($con, "DELETE FROM post WHERE postId='$post_id'");
         }
 
 ?>

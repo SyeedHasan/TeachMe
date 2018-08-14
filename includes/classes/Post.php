@@ -463,7 +463,7 @@ class Post
                 }
 
                 if ($userLoggedIn == $addedByUserName) {
-                    $delete_button = "<button class='delete_button btn-danger' id='post$id'> X </button>";
+                    $delete_button = "<i class='fa fa-times' aria-hidden='true' id='post$id'></i>";
                 } else {
                     $delete_button = "";
                 }
