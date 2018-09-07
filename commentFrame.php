@@ -72,11 +72,12 @@ function toggle(){
     }
         
     // added_by - userId
+    $userID = $user['id'];
     // user_to - classroomId
     $user_query = mysqli_query($con, "SELECT userId, classroomId FROM postuser WHERE postId='$postID'");
     $row = mysqli_fetch_array($user_query);
 
-    $userID = $row['userId'];
+    $postUser = $row['userId'];
     $classroomID = $row['classroomId'];
 
     if (isset($_POST['postComment' . $postID])) {
@@ -180,11 +181,11 @@ function toggle(){
 
 
             <div class="comment_section">
-                <a href="<?php echo $posted_byUN; ?>" target="_parent"> 
+                <a href="profile.php?id=<?php echo $user_obj->getUserID(); ?>" target="_parent"> 
                     <img src="<?php echo $user_obj->getProfilePic() ?>" title="<?php echo $posted_byUN; ?>" style="float:left;" height="30">   
                 </a>
 
-                <a href="<?php echo $posted_byUN; ?>" target="_parent"> <b><?php echo $user_obj->getFirstAndLastName();?></b> </a>
+                <a href="profile.php?id=<?php echo $posted_byUN; ?>" target="_parent"> <b><?php echo $user_obj->getFirstAndLastName();?></b> </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
                 <?php echo $time_message . "<br>" . $comment_body; ?>
